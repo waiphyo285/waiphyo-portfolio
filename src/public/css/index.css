@@ -1,0 +1,319 @@
+@import url("https://fonts.googleapis.com/css2?family=Padauk&display=swap");
+
+:root {
+  --white-color: #fdfdfd;
+  --primary-color: #286090;
+  --second-color: #ffc100;
+  --third-color: #6c757d;
+  --dark-text: #dfdfdf;
+  --light-text: #1f1f1f;
+  --dark-background: #1f1f1f;
+  --light-background: #dfdfdf;
+  --primary-font: "Padauk", sans-serif;
+  --second-font: "Z01-Umoe002", sans-serif;
+  --third-font: "Myanmar Yinmar", sans-serif;
+}
+
+.theme-light {
+  color: var(--light-text);
+  background: var(--light-background);
+}
+
+.theme-dark {
+  color: var(--dark-text);
+  background: var(--dark-background);
+}
+
+/* Scroll Bar */
+
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  display: none;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #ddd;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #bbb;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #999;
+}
+
+::selection {
+  color: var(--second-color);
+}
+
+/* General elemnets */
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: var(--second-font);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+p {
+  font-size: 18px !important;
+  text-align: justify;
+  line-height: 24px;
+  text-indent: 5ch;
+}
+
+a {
+  font-size: 18x !important;
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+/* Header */
+
+.title-name {
+  font-size: 28px !important;
+  font-weight: bold !important;
+  font-family: var(--primary-font);
+}
+
+/* Body */
+
+.article {}
+
+.article:hover {
+  padding: 18px;
+  box-shadow: 0 0 0.1rem var(--third-color) !important;
+}
+
+/* Shadow */
+
+.shadow-sm {
+  opacity: 0.98;
+  box-shadow: 0 0 0.1rem var(--third-color) !important;
+}
+
+/* Separator */
+
+.separator {
+  display: flex;
+  margin: 10px 0;
+  align-items: center;
+}
+
+.separator h4 {
+  padding: 0 2rem;
+  /* creates the space */
+}
+
+.separator .line {
+  flex: 1;
+  height: 1px;
+  background-color: var(--light-background);
+}
+
+/* Map */
+
+.mapouter {
+  position: relative;
+  text-align: right;
+  width: 100%;
+  height: 220px;
+}
+
+.gmap_canvas {
+  overflow: hidden;
+  background: none !important;
+  width: 100%;
+  height: 220px;
+}
+
+.gmap_iframe {
+  height: 220px !important;
+}
+
+/* Nav */
+
+.nav-link,
+.nav-link:hover {
+  font-weight: bold;
+  color: var(--white-color) !important;
+}
+
+.nav-link.active {
+  color: var(--white-color) !important;
+  background: var(--primary-color) !important;
+  border-bottom: 5px solid var(--second-color) !important;
+}
+
+.about-nav-item,
+.about-nav-item:hover {
+  font-weight: bold;
+  color: var(--black-color) !important;
+}
+
+.about-nav-item.active {
+  background: none !important;
+  color: var(--primary-color) !important;
+  border: 1px solid rgba(0, 0, 0, .125);
+  border-left: 5px solid var(--second-color) !important;
+}
+
+/* List item */
+
+.list-group-item {
+  padding: 8.8px 15px;
+}
+
+/* Article */
+
+.article:hover {
+  background: inherit;
+  cursor: pointer;
+}
+
+/* Float & top */
+
+.div-relative {
+  position: relative;
+}
+
+.gradient-btn {
+  border: none;
+  color: var(--white-color);
+  background: var(--primary-color);
+}
+
+.gradient-btn:hover {
+  color: var(--white-color);
+  background-image: linear-gradient(to top, #005bbb 50%, #ffd500 50%);
+  background-image: -moz-linear-gradient(top, #005bbb 50%, #ffd500 50%);
+  background-image: -webkit-linear-gradient(top, #005bbb 50%, #ffd500 50%);
+}
+
+.switch-btn {
+  position: fixed;
+  z-index: 20;
+  top: 20px;
+  left: 20px;
+}
+
+.social-btn {
+  position: fixed;
+  z-index: 20;
+  right: 20px;
+  bottom: 4.4rem;
+}
+
+.top-to-btn,
+.toggle-social-btn {
+  position: fixed;
+  z-index: 20;
+  right: 20px;
+  bottom: 20px;
+}
+
+/* Social */
+
+.social a i {
+  font-size: 26px;
+  background-clip: text;
+  -moz-background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /* background-color: var(--primary-color) */
+}
+
+.social a i:hover {
+  background-image: linear-gradient(to top, #005bbb 50%, #ffd500 50%);
+  background-image: -moz-linear-gradient(top, #005bbb 50%, #ffd500 50%);
+  background-image: -webkit-linear-gradient(top, #005bbb 50%, #ffd500 50%);
+}
+
+/* Carousel Control */
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  display: none;
+  background-image: none;
+}
+
+.carousel-control-next-icon:after {
+  content: ">";
+  font-size: 25px;
+  font-weight: bold;
+  color: var(--third-color);
+}
+
+.carousel-control-prev-icon:after {
+  content: "<";
+  font-size: 25px;
+  font-weight: bold;
+  color: var(--third-color);
+}
+
+.carousel:hover .carousel-control-prev-icon,
+.carousel:hover .carousel-control-next-icon {
+  display: block
+}
+
+/* Git style */
+
+body .gist .gist-file {
+  border: none;
+  border-radius: 4.4px;
+}
+
+body .gist .gist-data {
+  border-bottom: none;
+  border-radius: 4.4px;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.1) !important;
+  /* background: rgba(0, 0, 0, 1); later switch theme */
+}
+
+body .gist .blob-wrapper {
+  border-radius: 0;
+}
+
+body .gist .highlight {
+  font-size: 18px !important;
+  font-family: var(--primary-font);
+  background: transparent;
+}
+
+body .gist .highlight td {
+  line-height: 24px;
+  font-size: inherit;
+  font-family: inherit;
+  /* color: var(--white-color); */
+}
+
+body .gist .highlight td::selection {
+  color: var(--white-color);
+  background: var(--primary-color);
+}
+
+body .gist tr:first-child td {
+  padding-top: 6px !important;
+}
+
+body .gist tr:last-child td {
+  padding-bottom: 6px !important;
+}
+
+body .gist .blob-num {
+  pointer-events: none;
+}
+
+body .gist .gist-meta {
+  display: none;
+}

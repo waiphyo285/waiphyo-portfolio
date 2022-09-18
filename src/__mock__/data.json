@@ -1,0 +1,454 @@
+{
+  "personal": {
+    "fullname": "Wai Phyo Naing",
+    "motto-text": "My solution, your success!",
+    "greeting-text": "I am a Backend Developer from Myanmar. I have been working for Global New Wave Technology in Yangon for over 2 years. And I also accept the occasional freelance project. I am passionate about design, development and interaction. I really love what I do.",
+    "get-in-touch-text": "Have to start a new project with me? I’m not far behind you. Please send me an email. I will get back to you as soon as possible.",
+    "get-in-touch-img": "/images/lotties/contact-me-for-a-job.json",
+    "profile-img": "images/waiphyo.jpg"
+  },
+  "navlist": [
+    {
+      "id": 1,
+      "icon": "bi-house",
+      "name": "home",
+      "show-text": "Home",
+      "active": "true"
+    },
+    {
+      "id": 2,
+      "icon": "bi-person",
+      "name": "about",
+      "show-text": "About",
+      "active": "false"
+    },
+    {
+      "id": 3,
+      "icon": "bi-newspaper",
+      "name": "blog",
+      "show-text": "Blog",
+      "active": "false"
+    },
+    {
+      "id": 4,
+      "icon": "bi-send",
+      "name": "contact",
+      "show-text": "Contact",
+      "active": "false"
+    }
+  ],
+  "contents": [
+    {
+      "id": 1,
+      "title": "Who Am I?",
+      "paragraph": [
+        "I believe that people should do things they are good at or in which their hearts lie. That’s why I chose web development as my career because I believe I’m good at this and mas I am always honest, and I am never afraid of doing hard work. I have finished my graduation from the University of Computer Studies, Meiktila on Computer Science. I have taken many lessons on modern web design and development from these classes.",
+        "My educational background and training keep me in this carrer. I typically work as a Backend Developer  who constanly seek out innovative solutions to everyday problems. In my three years in this industory, I've honed my critical thinkings and collaboration skills, I love working with a team. In my short time there, I've already contributed to over a dozen projects and assisted with managing one project for one of the clients.",
+        "Although I'm a backend position, I really love both back-end technologies like Node.js and front-end technologies like React.js. So one thing is for sure, I'm still running. I'd like to be as a Full Stack Developer with a penchant for product development in future."
+      ]
+    },
+    {
+      "id": 2,
+      "title": "About",
+      "experiences": {
+        "title": "Experiences",
+        "data": [
+          {
+            "id": 1,
+            "title": "Backend Developer",
+            "sub-title": "Global New Wave Technology",
+            "portfolio": "http://www.newwave-tech.com/",
+            "duration": "Dec 2019 - Present"
+          },
+          {
+            "id": 2,
+            "title": "Junior Odoo Developer",
+            "sub-title": "Global Connect Asia",
+            "portfolio": "https://www.gca.com.mm/",
+            "duration": "Aug 2019 - Nov 2019"
+          },
+          {
+            "id": 3,
+            "title": "Internship Program",
+            "sub-title": "Global Connect Asia",
+            "portfolio": "https://www.gca.com.mm/",
+            "duration": "May 2019 - Jul 2019"
+          }
+        ]
+      },
+      "educations": {
+        "title": "Educations",
+        "data": [
+          {
+            "id": 1,
+            "portfolio": "http://ucsmtla.edu.mm",
+            "title": "Computer Science",
+            "sub-title": "University of Computer Studies, Meiktila",
+            "duration": "Dec 2014 - Aug 2019"
+          }
+        ]
+      },
+      "hard-skills": {
+        "title": "Hard Skills",
+        "data": [
+          {
+            "id": 1,
+            "portfolio": "#",
+            "title": "Front-End Development",
+            "sub-title": "HTML, CSS, Bootstrap, JavaScript, JQuery, ReactJS, Redux"
+          },
+          {
+            "id": 2,
+            "portfolio": "#",
+            "title": "Back-End Development",
+            "sub-title": "Node.js, Express.js, Nest.js, MySQL, MongoDB, GraphQL, Redis"
+          },
+          {
+            "id": 3,
+            "portfolio": "#",
+            "title": "Other Tools",
+            "sub-title": "Git, CI-CD, Digital Ocean, AWS (EC2, Lightsail)"
+          }
+        ]
+      },
+      "certifications": {
+        "title": "Certifications",
+        "data": [
+          {
+            "id": 1,
+            "portfolio": "https://www.mcpamyanmar.org/news/itpec-exam-result-exam-date-28-4-2019/attachment/60349795_2437410202946517_3601866690909962240_n/",
+            "title": "IT Passport (IP19-2004)",
+            "sub-title": "ITPEC held by the guidelines of Myanmar Computer Federation",
+            "duration": "Jun 2019 - No Expired"
+          }
+        ]
+      }
+    },
+    {
+      "id": 3,
+      "title": "Blogs",
+      "articles": [
+        {
+          "id": 1,
+          "title": "API Template with Dashboard",
+          "tags": [
+            "WebDev",
+            "Node.js",
+            "MongoDB",
+            "MySQL",
+            "Redis"
+          ],
+          "link": "https://github.com/waiphyo285/itemplate-backend",
+          "paragraph": "I am introduced a simple API template for backend developers using clean architecture based on express application. This article is meant to help you with improved code."
+        },
+        {
+          "id": 2,
+          "title": "Visit Here - My Personal Notes.",
+          "tags": [
+            "WebDev",
+            "JavaScript",
+            "Programming",
+            "LifeStyle"
+          ],
+          "link": "https://blog.waiphyonaing.me",
+          "paragraph": "Blogging is a fun and flexible way for self-expression and social connection, so I want to share some of my career experiences especially about web development section."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Contact",
+      "contacts": [
+        {
+          "id": 1,
+          "icon": "bi-geo-alt",
+          "href": "#",
+          "show-text": "Mayangon Tsp., Yangon, Myanmar"
+        },
+        {
+          "id": 2,
+          "icon": "bi-envelope",
+          "href": "mailto:waiphyo.dev@gmail.com",
+          "show-text": "waiphyo.dev@gmail.com"
+        },
+        {
+          "id": 3,
+          "icon": "bi-globe",
+          "href": "https://waiphyonaing.me",
+          "show-text": "www.waiphyonaing.me"
+        }
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "id": 1,
+      "title": "Hyper Dashboard",
+      "description": "Startup project with my two friends, using tech-stack Node.js, Express.js, Pug, MongoDB. So, we all design project architectures and databases based on ideas, and then which is developed.",
+      "buttons": [
+        {
+          "name": "Code",
+          "link": "https://github.com/unlocksth/hyper-backend",
+          "icon": "bi-github",
+          "isShow": true
+        },
+        {
+          "name": "Live",
+          "link": "http://hpmin.unlocksth.site/",
+          "icon": "bi-link-45deg",
+          "isShow": false
+        }
+      ],
+      "images": [
+        "/images/hyper/backend-login.jpg",
+        "/images/hyper/backend-dashboard.jpg",
+        "/images/hyper/backend-list.jpg",
+        "/images/hyper/backend-entry.jpg"
+      ],
+      "show": true
+    },
+    {
+      "id": 2,
+      "title": "Hyper E-commerce",
+      "description": "This marketplace is my very first e-commerce project. It is mainly provided to facilitate the order and delivery of products from suppliers to customers.",
+      "buttons": [
+        {
+          "name": "Code",
+          "link": "https://github.com/unlocksth/hyper-frontend",
+          "icon": "bi-github",
+          "isShow": true
+        },
+        {
+          "name": "Live",
+          "link": "http://hyper.unlocksth.site/",
+          "icon": "bi-link-45deg",
+          "isShow": false
+        }
+      ],
+      "images": [
+        "/images/hyper/frontend-signup.jpg",
+        "/images/hyper/frontend-login.jpg",
+        "/images/hyper/frontend-pages.jpg",
+        "/images/hyper/frontend-404.jpg"
+      ],
+      "show": true
+    },
+    {
+      "id": 3,
+      "title": "Khoway Dashboard",
+      "description": "This MERN stack project is a chat application, which a user can create multi room and can discuss any other public room.",
+      "buttons": [
+        {
+          "name": "Code",
+          "link": "https://github.com/unlocksth/khoway-backend",
+          "icon": "bi-github",
+          "isShow": true
+        },
+        {
+          "name": "Live",
+          "link": "http://kwmin.unlocksth.site/",
+          "icon": "bi-github",
+          "isShow": false
+        }
+      ],
+      "images": [
+        "/images/khoway/backend-auth.jpg",
+        "/images/khoway/backend-dashboard.jpg"
+      ],
+      "show": true
+    },
+    {
+      "id": 4,
+      "title": "Khoway Chatroom",
+      "description": "This MERN stack project is a chat application, which a user can create multi room and can discuss any other public room.",
+      "buttons": [
+        {
+          "name": "Code",
+          "link": "https://github.com/unlocksth/khoway-frontend",
+          "icon": "bi-github",
+          "isShow": true
+        },
+        {
+          "name": "Live",
+          "link": "http://khoway.unlocksth.site/",
+          "icon": "bi-github",
+          "isShow": false
+        }
+      ],
+      "images": [
+        "/images/khoway/frontend-login.jpg",
+        "/images/khoway/frontend-chat.jpg"
+      ],
+      "show": true
+    },
+    {
+      "id": 5,
+      "title": "11 Batch Dinner Registration",
+      "description": "This project was developed after school, to register for classmates' dinner using PHP and MySQL.",
+      "buttons": [
+        {
+          "name": "Code",
+          "link": "https://github.com/waiphyo285/cdr-11-batch-dinner",
+          "icon": "bi-github",
+          "isShow": true
+        },
+        {
+          "name": "Live",
+          "link": "#",
+          "icon": "bi-link-45deg",
+          "isShow": false
+        }
+      ],
+      "images": [
+        "/images/cdr-11/backend-login.jpg",
+        "/images/cdr-11/backend-dashboard.jpg",
+        "/images/cdr-11/backend-pages.jpg"
+      ],
+      "show": false
+    },
+    {
+      "id": 6,
+      "title": "Truck Gate Management",
+      "description": "This project was developed when I was in school using Laravel framework.",
+      "buttons": [
+        {
+          "name": "Code",
+          "link": "https://github.com/waiphyo285/truckapp",
+          "icon": "bi-github",
+          "isShow": true
+        },
+        {
+          "name": "Live",
+          "link": "#",
+          "icon": "bi-link-45deg",
+          "isShow": false
+        }
+      ],
+      "images": [
+        "/images/truckapp/backend-login.jpg",
+        "/images/truckapp/backend-dashboard.jpg"
+      ],
+      "show": false
+    },
+    {
+      "id": 7,
+      "title": "Youtube Downloader",
+      "description": "This app is to help multiple options for downloading youtube video.",
+      "buttons": [
+        {
+          "name": "Code",
+          "link": "https://github.com/unlocksth/youtube-downloader",
+          "icon": "bi-github",
+          "isShow": true
+        },
+        {
+          "name": "Live",
+          "link": "http://ytdl.unlocksth.site/",
+          "icon": "bi-link-45deg",
+          "isShow": true
+        }
+      ],
+      "images": [
+        "/images/ytdl-app/frontend-ui.jpg"
+      ],
+      "show": false
+    },
+    {
+      "id": 8,
+      "title": "My Bookmarks",
+      "description": "This app is to collect my bookmark folder that is how so stupid me.",
+      "buttons": [
+        {
+          "name": "Code",
+          "link": "https://github.com/unlocksth/my-bookmarks",
+          "icon": "bi-github",
+          "isShow": true
+        },
+        {
+          "name": "Live",
+          "link": "https://bookmarks.waiphyonaing.me/",
+          "icon": "bi-link-45deg",
+          "isShow": true
+        }
+      ],
+      "images": [
+        "/images/ibookmarks/page-1.jpg",
+        "/images/ibookmarks/page-2.jpg"
+      ],
+      "show": false
+    },
+    {
+      "id": 9,
+      "title": "Burmese Measure",
+      "description": "This package can be simply used as conversion gram to burmese measuring units such as kyat, pae, yway, etc.",
+      "buttons": [
+        {
+          "name": "Code",
+          "link": "https://github.com/waiphyo285/burmese-measure",
+          "icon": "bi-github",
+          "isShow": true
+        },
+        {
+          "name": "Live",
+          "link": "https://www.npmjs.com/package/burmese-measure",
+          "icon": "bi-link-45deg",
+          "isShow": true
+        }
+      ],
+      "images": [
+        "/images/measure/npm-home.jpg"
+      ],
+      "show": false
+    }
+  ],
+  "contacts": [
+    {
+      "id": 1,
+      "href": "https://wa.me/959969616725",
+      "icon": "bi-whatsapp",
+      "color": "#25d366"
+    },
+    {
+      "id": 2,
+      "href": "https://join.skype.com/invite/WJJFRXLTcCG9",
+      "icon": "bi-skype",
+      "color": "#00aff0"
+    },
+    {
+      "id": 3,
+      "href": "mailto:waiphyo.dev@gmail.com",
+      "icon": "bi-envelope",
+      "color": "#ea4335"
+    }
+  ],
+  "banners": [
+    {
+      "id": 1,
+      "src": "/images/lotties/male-web-development.json"
+    },
+    {
+      "id": 2,
+      "src": "/images/lotties/female-web-development.json"
+    }
+  ],
+  "socials": [
+    {
+      "id": 1,
+      "href": "https://github.com/waiphyo285",
+      "icon": "bi-github",
+      "color": "#286090"
+    },
+    {
+      "id": 2,
+      "href": "https://www.linkedin.com/in/wai-phyo-naing",
+      "icon": "bi-linkedin",
+      "color": "#286090"
+    },
+    {
+      "id": 3,
+      "href": "https://twitter.com/waiphyo285",
+      "icon": "bi-twitter",
+      "color": "#286090"
+    }
+  ]
+}
