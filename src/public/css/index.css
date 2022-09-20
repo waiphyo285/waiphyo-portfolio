@@ -16,7 +16,7 @@
 
 .theme-light {
   color: var(--light-text);
-  background: var(--light-background);
+  background: var(--light-background)
 }
 
 .theme-dark {
@@ -79,10 +79,22 @@ a {
 
 /* Header */
 
+.cover {
+  background: var(--dark-background);
+  background: radial-gradient(circle, #0F55AA 0%, var(--primary-color) 100%);
+}
+
 .title-name {
   font-size: 28px !important;
   font-weight: bold !important;
   font-family: var(--primary-font);
+}
+
+.profile-dot {
+  position: absolute;
+  font-size: 20px;
+  top: 120px;
+  right: 38px;
 }
 
 /* Body */

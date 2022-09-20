@@ -4,7 +4,7 @@ import { Provider } from 'react-redux'
 
 import App from "./App";
 import store from './store'
-import worker from "./api/server"
+import worker from "./api/mockServer"
 import * as serviceWorker from "./serviceWorker";
 
 // Wrap app rendering so we can wait for the mock API to initialize

@@ -1,6 +1,6 @@
-import React, { CSSProperties } from "react";
-import { useSelector, useDispatch } from 'react-redux'
+import React from "react";
 import DotLoader from "react-spinners/DotLoader";
+import { useSelector, useDispatch } from 'react-redux'
 
 // Home components
 import HeaderComponent from "../../components/home/Header";
@@ -17,7 +17,7 @@ import { fetchProject } from "../../redux/projectSlice";
 import { fetchBanner } from "../../redux/bannerSlice";
 import { fetchSocial } from "../../redux/socialSlice";
 
-// Style component
+// Loading
 import "../../public/css/loading.css"
 
 function HomePage({ data }) {

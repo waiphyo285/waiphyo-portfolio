@@ -2,10 +2,10 @@ import React from "react";
 import Radium, { StyleRoot } from "radium";
 import { fadeIn } from "react-animations";
 
-// Context
+// Context Provider
 import AppContext from "../../context/AppContext";
 
-// Component
+// Common Component
 import MessageButton from "./MessageButton";
 
 const styles = {
@@ -28,16 +28,18 @@ function ContactButtonComponent({ contacts }) {
             className="btn-group-vertical social-btn"
             style={{ ...styles.fadeIn, "bottom": showTopBtn ? "7.4rem" : "4.4rem" }}
           >
-            {contacts.map((contact, contIdx) => (
-              <a
-                key={contIdx}
-                href={contact.href}
-                className="btn gradient-btn my-1"
-                style={{ backgroundColor: contact.color }}
-              >
-                <i className={contact.icon}></i>
-              </a>
-            ))}
+            {
+              contacts.map((contact, contIdx) => (
+                <a
+                  key={contIdx}
+                  href={contact.href}
+                  className="btn gradient-btn my-1"
+                  style={{ backgroundColor: contact.color }}
+                >
+                  <i className={contact.icon}></i>
+                </a>
+              ))
+            }
           </div>
         </StyleRoot>
       }

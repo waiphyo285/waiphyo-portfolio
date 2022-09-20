@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useSnackbar } from 'react-simple-snackbar'
 
-
 function ContactFormComponent() {
     const [openSnackbar, closeSnackbar] = useSnackbar()
 

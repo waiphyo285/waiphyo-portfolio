@@ -1,4 +1,6 @@
-import React, { useEffect } from "react";
+import React from "react";
+
+// Context Provider
 import AppContext from "../../context/AppContext";
 
 const ScrollTopComponent = ({ scrollVal: PropsScrollVal }) => {
@@ -10,10 +12,7 @@ const ScrollTopComponent = ({ scrollVal: PropsScrollVal }) => {
 
   // scroll top event handler
   const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
+    window.scrollTo({ top: 0, behavior: "smooth" });
     setOnScrollY(0);
   };
 
@@ -27,15 +26,17 @@ const ScrollTopComponent = ({ scrollVal: PropsScrollVal }) => {
 
   return (
     <>
-      {showTopBtn && (
-        <button
-          href="#top"
-          onClick={scrollToTop}
-          className="btn gradient-btn top-to-btn"
-        >
-          <i className="bi-chevron-up"></i>
-        </button>
-      )}
+      {
+        showTopBtn && (
+          <button
+            href="#top"
+            onClick={scrollToTop}
+            className="btn gradient-btn top-to-btn"
+          >
+            <i className="bi-chevron-up"></i>
+          </button>
+        )
+      }
     </>
   );
 };

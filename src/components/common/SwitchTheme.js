@@ -44,7 +44,7 @@ function SwitchThemeComponent() {
             <Switch
                 onColor="#dfdfdf"
                 offColor="#6c757d"
-                onChange={() => setDayCheck(!dayCheck)} // custom toggle
+                onChange={() => setDayCheck(!dayCheck)} // custom
                 uncheckedIcon={uncheckedIcon}
                 checkedIcon={checkedIcon}
                 checked={dayCheck}
