@@ -10,7 +10,7 @@ function AboutMenuComponent({ contents, menuName, isActive }) {
             aria-controls={`list-${menuName}`}
             className={`list-group-item about-nav-item ${isActive}`}
         >
-            <span className="bi bi-briefcase">&nbsp;</span>
+            <span className={contents[menuName]["icon"]}>&nbsp;&nbsp;</span>
             {contents[menuName]["title"]}
         </a>
     )

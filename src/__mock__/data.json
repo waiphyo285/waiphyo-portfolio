@@ -52,6 +52,7 @@
       "title": "About",
       "experiences": {
         "title": "Experiences",
+        "icon": "bi-briefcase",
         "data": [
           {
             "id": 1,
@@ -78,6 +79,7 @@
       },
       "educations": {
         "title": "Educations",
+        "icon": "bi-mortarboard",
         "data": [
           {
             "id": 1,
@@ -90,6 +92,7 @@
       },
       "hard-skills": {
         "title": "Hard Skills",
+        "icon": "bi-code-square",
         "data": [
           {
             "id": 1,
@@ -113,6 +116,7 @@
       },
       "certifications": {
         "title": "Certifications",
+        "icon": "bi-award",
         "data": [
           {
             "id": 1,

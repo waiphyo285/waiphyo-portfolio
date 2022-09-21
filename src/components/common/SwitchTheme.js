@@ -47,7 +47,7 @@ function SwitchThemeComponent() {
                 onChange={() => setDayCheck(!dayCheck)} // custom
                 uncheckedIcon={uncheckedIcon}
                 checkedIcon={checkedIcon}
-                checked={dayCheck}
+                checked={!dayCheck}
             />
         </label>
     );
