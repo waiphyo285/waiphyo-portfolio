@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import SwitchTheme from "../../common/SwitchTheme";
+import SwitchTheme from "../../common/buttons/SwitchTheme";
 import BodyContext from "../../../context/BodyContext";
 
 function NavListComponent({ navlist }) {

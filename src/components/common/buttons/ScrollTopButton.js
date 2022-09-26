@@ -1,7 +1,7 @@
 import React from "react";
 
 // Context Provider
-import AppContext from "../../context/AppContext";
+import AppContext from "../../../context/AppContext";
 
 const ScrollTopComponent = ({ scrollVal: PropsScrollVal }) => {
   const {

@@ -23,3 +23,8 @@ $ npx create-react-app my-app
 ### Reference Links
 
 https://stackoverflow.com/questions/55795125/how-to-send-email-from-my-react-web-application
+
+### Github commit
+
+git remote set-url origin https://waiphyo285@github.com/waiphyo285/waiphyo285-portfolio.git
+https://stackoverflow.com/questions/37813568/git-remote-repository-not-found

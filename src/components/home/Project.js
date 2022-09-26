@@ -7,7 +7,7 @@ import CarouselInner from "./project/CarouselInner";
 import PrevNextButton from "./project/PrevNextButton";
 
 // common components
-import SeparateHeader from "../common/SeparateHeader";
+import SeparateHeader from "../common/others/SeparateHeader";
 
 let styles = {
   zoomIn: {

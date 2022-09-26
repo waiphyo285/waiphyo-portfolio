@@ -3,7 +3,7 @@ import Radium, { StyleRoot } from "radium";
 import { fadeIn } from "react-animations";
 
 // Context Provider
-import AppContext from "../../context/AppContext";
+import AppContext from "../../../context/AppContext";
 
 // Common Component
 import MessageButton from "./MessageButton";

@@ -13,10 +13,10 @@ import AppContext from "./context/AppContext";
 import HomePage from "./pages/home/index";
 
 // Common component
-import AuthModal from "./components/common/AuthModal";
-import ContactButton from "./components/common/ContactButton";
-import ScrollTop from "./components/common/ScrollTopButton";
-import ProgressBar from "./components/common/ProgressBar";
+import AuthModal from "./components/common/forms/AuthModal";
+import ContactButton from "./components/common/buttons/ContactButton";
+import ScrollTop from "./components/common/buttons/ScrollTopButton";
+import ProgressBar from "./components/common/others/ProgressBar";
 
 // Redux 
 import { fetchContact } from "./redux/features/contactSlice";

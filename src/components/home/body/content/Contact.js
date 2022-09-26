@@ -4,8 +4,8 @@ import React from "react";
 import ContactList from "./contact/ContactList";
 
 // common components
-import ContactForm from "../../../common/ContactForm";
-import GoogleMap from "../../../common/GoogleMap";
+import ContactForm from "../../../common/forms/ContactForm";
+import GoogleMap from "../../../common/others/GoogleMap";
 
 function ContactContentComponent({ contents }) {
     return (

@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import AppContext from "../../context/AppContext";
+import AppContext from "../../../context/AppContext";
 
 const MessageButtonComponent = () => {
     const { showTopBtn, showSocial, setShowSocial } = React.useContext(AppContext);

@@ -1,5 +1,5 @@
 import React from "react";
-import SeparateHeader from "../common/SeparateHeader";
+import SeparateHeader from "../common/others/SeparateHeader";
 
 function BannerComponent({ banners }) {
   return (
