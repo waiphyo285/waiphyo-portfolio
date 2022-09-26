@@ -31,24 +31,20 @@
 
 /* Scroll Bar */
 
-/* width */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
   display: none;
 }
 
-/* Track */
 ::-webkit-scrollbar-track {
   background: #ddd;
 }
 
-/* Handle */
 ::-webkit-scrollbar-thumb {
   background: #bbb;
 }
 
-/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #999;
 }
@@ -128,7 +124,6 @@ a {
 
 .separator h4 {
   padding: 0 2rem;
-  /* creates the space */
 }
 
 .separator .line {
@@ -232,8 +227,15 @@ a {
   bottom: 4.4rem;
 }
 
+.toggle-auth-btn {
+  position: fixed;
+  z-index: 20;
+  right: 20px;
+  top: 20px;
+}
+
 .top-to-btn,
-.toggle-social-btn {
+.toggle-msg-btn {
   position: fixed;
   z-index: 20;
   right: 20px;
@@ -248,7 +250,6 @@ a {
   -moz-background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  /* background-color: var(--primary-color) */
 }
 
 .social a i:hover {
@@ -296,7 +297,6 @@ body .gist .gist-data {
   border-radius: 4.4px;
   border: 1px solid rgba(0, 0, 0, 0.125);
   box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.1) !important;
-  /* background: rgba(0, 0, 0, 1); later switch theme */
 }
 
 body .gist .blob-wrapper {
@@ -313,7 +313,6 @@ body .gist .highlight td {
   line-height: 24px;
   font-size: inherit;
   font-family: inherit;
-  /* color: var(--white-color); */
 }
 
 body .gist .highlight td::selection {

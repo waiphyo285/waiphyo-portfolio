@@ -10,12 +10,12 @@ import BannerComponent from "../../components/home/Banner";
 import FooterComponent from "../../components/home/Footer";
 
 // Redux 
-import { fetchMe } from '../../redux/meSlice'
-import { fetchNav } from "../../redux/navSlice";
-import { fetchContent } from "../../redux/contentSlice";
-import { fetchProject } from "../../redux/projectSlice";
-import { fetchBanner } from "../../redux/bannerSlice";
-import { fetchSocial } from "../../redux/socialSlice";
+import { fetchMe } from '../../redux/features/meSlice'
+import { fetchNav } from "../../redux/features/navSlice";
+import { fetchContent } from "../../redux/features/contentSlice";
+import { fetchProject } from "../../redux/features/projectSlice";
+import { fetchBanner } from "../../redux/features/bannerSlice";
+import { fetchSocial } from "../../redux/features/socialSlice";
 
 // Loading
 import "../../public/css/loading.css"

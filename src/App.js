@@ -13,12 +13,13 @@ import AppContext from "./context/AppContext";
 import HomePage from "./pages/home/index";
 
 // Common component
+import AuthModal from "./components/common/AuthModal";
 import ContactButton from "./components/common/ContactButton";
 import ScrollTop from "./components/common/ScrollTopButton";
 import ProgressBar from "./components/common/ProgressBar";
 
 // Redux 
-import { fetchContact } from "./redux/contactSlice";
+import { fetchContact } from "./redux/features/contactSlice";
 
 // import data
 import data from "./__mock__/data.json"
@@ -60,6 +61,11 @@ function App() {
         <div className="fixed-top">
           <ProgressBar
             scrollVal={onScrollY}
+          />
+        </div>
+        <div className="div-relative">
+          <AuthModal
+            authUser={{ user: "demo" }}
           />
         </div>
         <div className="div-relative">
