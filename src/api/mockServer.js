@@ -9,16 +9,32 @@ import contacts from "../__mock__/contacts.json";
 import banners from "../__mock__/banners.json";
 import socials from "../__mock__/socials.json";
 
+// Session Storage
+import ssService from "../services/sessionStorage"
+
 // Add an extra delay to all endpoints
 const ARTIFICIAL_DELAY_MS = 2000
 
 const worker = setupWorker(
     rest.post('/mockApi/login', (req, res, ctx) => {
-        const { username, password } = req.body;
-        const { username: mockUser, password: mockPass } = auth.result;
+        const { username, password } = req.body
+        const { username: mockUser, password: mockPass } = auth.result
+        const isUser = (username === mockUser && password === mockPass)
+        const result = isUser ? auth.result : null
+
+        ssService.setItem("user", result)
+
         return res(
-            ctx.delay(ARTIFICIAL_DELAY_MS),
-            ctx.json((username === mockUser && password === mockPass) ? auth.result : null)
+            ctx.delay(0),
+            ctx.json(result)
+        )
+    }),
+    rest.post('/mockApi/logout', (req, res, ctx) => {
+        ssService.removeItem("user")
+
+        return res(
+            ctx.delay(0),
+            ctx.json(true)
         )
     }),
     rest.get('/mockApi/me', (req, res, ctx) => {

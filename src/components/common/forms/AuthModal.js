@@ -1,14 +1,11 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useSnackbar } from 'react-simple-snackbar'
 import { useSelector, useDispatch } from 'react-redux'
-import { authLogin, authActions } from "../../../redux/features/authSlice";
+import { authLogin, authLogout } from "../../../redux/features/authSlice";
 
 const AuthModalComponent = ({ authStatus }) => {
     const dispatch = useDispatch()
     const authData = useSelector((state) => state.auth)
-
-    const [isAuth, setIsAuth] = React.useState(authStatus)
-    const [showModal, setShowModal] = React.useState("")
 
     const [formData, setFormData] = React.useState({
         username: "",
@@ -17,9 +14,8 @@ const AuthModalComponent = ({ authStatus }) => {
 
     const [openSnackbar, closeSnackbar] = useSnackbar({
         style: {
-            fontSize: '18px',
-            textAlign: 'center',
-            border: '1px solid #ffc100',
+            color: '#3f3f3f',
+            backgroundColor: '#ffffff',
         },
     })
 
@@ -32,26 +28,30 @@ const AuthModalComponent = ({ authStatus }) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        await dispatch(authLogin(formData))
+        dispatch(authLogin(formData))
+            .unwrap()
+            .then((result) => {
+                if (result === null) {
+                    openSnackbar("Sorry, username or password went wrong!")
+                }
+                else {
+                    document.getElementById('closeModal').click();
+                    openSnackbar("You are successfully logged in!")
+                    setTimeout(() => window.location.reload(), 3000);
+                }
+            })
+            .catch((error) => {
+                console.log("Login Error ", error)
+            });
     };
-
-    useEffect(() => {
-        if (authData.data !== null) {
-            setShowModal("")
-            setIsAuth("authourized")
-            dispatch(authActions.login("authourized"))
-            openSnackbar("You are successfully logged in!")
-        }
-    }, [authData, dispatch])
 
     return (
         <>
             {
-                isAuth === "unAuthourized"
+                authData.status == "unAuthorized"
                     ? <>
                         <button
                             href="#login"
-                            onClick={() => { setShowModal("show") }}
                             data-bs-toggle="modal"
                             data-bs-target="#loginForm"
                             className="btn gradient-btn toggle-auth-btn d-none d-lg-inline"
@@ -60,8 +60,7 @@ const AuthModalComponent = ({ authStatus }) => {
                         </button>
                         <div
                             id="loginForm" data-bs-backdrop="static"
-                            className={`modal fade text-dark ${showModal}`}
-                            style={{ display: showModal ? "block" : "none" }}
+                            className={`modal fade text-dark`}
                             data-bs-keyboard="false"
                             aria-labelledby="loginFormLabel"
                             aria-hidden="true"
@@ -75,7 +74,6 @@ const AuthModalComponent = ({ authStatus }) => {
                                             type="button"
                                             className="btn-close"
                                             data-bs-dismiss="modal"
-                                            onClick={() => { setShowModal(""); }}
                                             aria-label="Close"
                                         >
                                         </button>
@@ -112,10 +110,10 @@ const AuthModalComponent = ({ authStatus }) => {
                                         </div>
                                         <div className="modal-footer">
                                             <button
+                                                id="closeModal"
                                                 type="button"
                                                 className="btn"
                                                 data-bs-dismiss="modal"
-                                                onClick={() => { setShowModal(""); }}
                                             >
                                                 Cancel
                                             </button>
@@ -131,7 +129,9 @@ const AuthModalComponent = ({ authStatus }) => {
                     : <button
                         href="#logout"
                         onClick={() => {
-                            dispatch(authActions.login("authourized"))
+                            dispatch(authLogout())
+                            openSnackbar("You are successfully logged out!")
+                            setTimeout(() => window.location.reload(), 3000);
                         }}
                         className="btn gradient-btn toggle-auth-btn d-none d-lg-inline"
                     >

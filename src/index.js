@@ -5,14 +5,10 @@ import { Provider } from 'react-redux'
 import App from "./App";
 import store from './redux/store'
 import worker from "./api/mockServer"
-import lsService from "./services/localStorage"
 import * as serviceWorker from "./serviceWorker";
 
 // Wrap app rendering so we can wait for the mock API to initialize
 async function start() {
-    // Start with unAuthourized user
-    lsService.setItem("authStatus", "unAuthourized")
-
     // Start our mock API server
     await worker.start({
         onUnhandledRequest: 'bypass'

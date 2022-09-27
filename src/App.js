@@ -21,9 +21,6 @@ import ProgressBar from "./components/common/others/ProgressBar";
 // Redux 
 import { fetchContact } from "./redux/features/contactSlice";
 
-// Services
-import lsService from "./services/localStorage";
-
 // Data
 // import data from "./__mock__/data.json"
 
@@ -67,7 +64,7 @@ function App() {
         </div>
         <div className="div-relative">
           <AuthModal
-            authStatus={lsService.getItem("authStatus")}
+            authStatus={{}}
           />
         </div>
         <div className="div-relative">

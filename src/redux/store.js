@@ -10,22 +10,6 @@ import contactReducer from './features/contactSlice'
 import bannerReducer from './features/bannerSlice'
 import socialReducer from './features/socialSlice'
 
-// actions
-import { authActions } from './features/authSlice'
-
-// services
-import lsService from '../services/localStorage'
-
-const authMiddleware = (store) => (next) => (action) => {
-    if (authActions.login.match(action)) {
-        // Note: localStorage expects a string
-        lsService.setItem('authStatus', 'authourized');
-    }
-    else if (authActions.logout.match(action)) {
-        lsService.setItem('authStatus', 'unAuthourized');
-    }
-    return next(action);
-};
 
 export default configureStore({
     reducer: {
@@ -37,6 +21,5 @@ export default configureStore({
         contact: contactReducer,
         banner: bannerReducer,
         social: socialReducer,
-    },
-    middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(authMiddleware)
+    }
 })
