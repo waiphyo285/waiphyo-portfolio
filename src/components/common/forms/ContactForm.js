@@ -2,15 +2,26 @@ import React, { useState } from "react";
 import { useSnackbar } from 'react-simple-snackbar'
 
 function ContactFormComponent() {
-    const [openSnackbar, closeSnackbar] = useSnackbar()
-
-    // eca928c3-8e57-4c36-8f79-2a8a84923603
-    // 9eae8f00-ae3e-4da7-aa18-52af6ddcb1b1
     const [formData, setFormData] = useState({
         name: "",
         email: "",
         message: "",
     });
+
+    const [openSnackbar, closeSnackbar] = useSnackbar({
+        style: {
+            fontSize: '18px',
+            textAlign: 'center',
+            border: '1px solid #ffc100',
+        },
+    })
+
+    const handleChange = (e) => {
+        setFormData({
+            ...formData,
+            [e.target.name]: e.target.value,
+        });
+    };
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -31,16 +42,9 @@ function ContactFormComponent() {
         });
     };
 
-    const handleChange = (e) => {
-        setFormData({
-            ...formData,
-            [e.target.name]: e.target.value,
-        });
-    };
-
     return (
         <div className="shadow-sm">
-            <form className="p-2" onSubmit={handleSubmit}>
+            <form className="p-2" onSubmit={handleSubmit} method="post">
                 <div className="form-group m-2 mb-4">
                     <label htmlFor="name">Name</label>
                     <input
@@ -82,7 +86,7 @@ function ContactFormComponent() {
                 </div>
                 <div className="form-group m-2 pb-2">
                     <hr />
-                    <button type="submit" className="btn btn-secondary form-control">
+                    <button type="submit" className="btn btn-dark form-control">
                         <i className="bi-send" /> Submit
                     </button>
                 </div>

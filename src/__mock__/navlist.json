@@ -1,0 +1,33 @@
+{
+    "status": 200,
+    "result": [
+        {
+            "id": 1,
+            "icon": "bi-house",
+            "name": "home",
+            "show-text": "Home",
+            "active": "true"
+        },
+        {
+            "id": 2,
+            "icon": "bi-person",
+            "name": "about",
+            "show-text": "About",
+            "active": "false"
+        },
+        {
+            "id": 3,
+            "icon": "bi-newspaper",
+            "name": "blog",
+            "show-text": "Blog",
+            "active": "false"
+        },
+        {
+            "id": 4,
+            "icon": "bi-send",
+            "name": "contact",
+            "show-text": "Contact",
+            "active": "false"
+        }
+    ]
+}

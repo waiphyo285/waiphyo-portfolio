@@ -22,79 +22,68 @@ import "../../public/css/loading.css"
 
 function HomePage({ data }) {
   const dispatch = useDispatch()
-  const personalStatus = useSelector((state) => state.me.status)
-  const personalData = useSelector((state) => state.me.data)
-
-  const navlistStatus = useSelector((state) => state.nav.status)
-  const navlistData = useSelector((state) => state.nav.data)
-
-  const contentStatus = useSelector((state) => state.content.status)
-  const contentData = useSelector((state) => state.content.data)
-
-  const projectStatus = useSelector((state) => state.project.status)
-  const projectData = useSelector((state) => state.project.data)
-
-  const bannerStatus = useSelector((state) => state.banner.status)
-  const bannerData = useSelector((state) => state.banner.data)
-
-  const socialStatus = useSelector((state) => state.social.status)
-  const socialData = useSelector((state) => state.social.data)
+  const personalData = useSelector((state) => state.me)
+  const navlistData = useSelector((state) => state.nav)
+  const contentData = useSelector((state) => state.content)
+  const projectData = useSelector((state) => state.project)
+  const bannerData = useSelector((state) => state.banner)
+  const socialData = useSelector((state) => state.social)
 
   const [color, setColor] = React.useState("#286090");
   const [loading, setLoading] = React.useState(true);
   const [successCount, setSuccessCount] = React.useState(0);
 
-  const handleFetchData = (dataStatus, fetchData) => {
-    if (dataStatus === "pending") {
+  const handleFetchData = (data, fetchData) => {
+    if (data.status === "pending") {
       dispatch(fetchData())
     }
-    if (dataStatus === "success") {
+    if (data.status === "success") {
       setSuccessCount(successCount + 1)
     }
   }
 
   React.useEffect(() => {
-    handleFetchData(personalStatus, fetchMe)
-  }, [personalStatus, dispatch])
+    handleFetchData(personalData, fetchMe)
+  }, [personalData, dispatch])
 
   React.useEffect(() => {
-    handleFetchData(navlistStatus, fetchNav)
-  }, [navlistStatus, dispatch])
+    handleFetchData(navlistData, fetchNav)
+  }, [navlistData, dispatch])
 
   React.useEffect(() => {
-    handleFetchData(contentStatus, fetchContent)
-  }, [contentStatus, dispatch])
+    handleFetchData(contentData, fetchContent)
+  }, [contentData, dispatch])
 
   React.useEffect(() => {
-    handleFetchData(projectStatus, fetchProject)
-  }, [projectStatus, dispatch])
+    handleFetchData(projectData, fetchProject)
+  }, [projectData, dispatch])
 
   React.useEffect(() => {
-    handleFetchData(bannerStatus, fetchBanner)
-  }, [bannerStatus, dispatch])
+    handleFetchData(bannerData, fetchBanner)
+  }, [bannerData, dispatch])
 
   React.useEffect(() => {
-    handleFetchData(socialStatus, fetchSocial)
-  }, [socialStatus, dispatch])
+    handleFetchData(socialData, fetchSocial)
+  }, [socialData, dispatch])
 
   return (
     successCount >= 6
       ? <>
         <HeaderComponent
-          personal={personalData}
+          personal={personalData.data}
         />
         <BodyComponent
-          navlist={navlistData}
-          contents={contentData}
+          navlist={navlistData.data}
+          contents={contentData.data}
         />
         <ProjectComponent
-          projects={projectData}
+          projects={projectData.data}
         />
         <BannerComponent
-          banners={bannerData}
+          banners={bannerData.data}
         />
         <FooterComponent
-          socials={socialData}
+          socials={socialData.data}
         />
       </>
       : <div className="jumbotron vertical-center" >

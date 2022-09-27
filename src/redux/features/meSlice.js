@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import { client } from '../../api/mockClient'
 
 const initialState = {
-    data: {},
+    data: null,
     status: 'pending',
 }
 

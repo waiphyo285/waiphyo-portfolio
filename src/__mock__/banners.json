@@ -1,0 +1,13 @@
+{
+    "status": 200,
+    "result": [
+        {
+            "id": 1,
+            "src": "/images/lotties/male-web-development.json"
+        },
+        {
+            "id": 2,
+            "src": "/images/lotties/female-web-development.json"
+        }
+    ]
+}

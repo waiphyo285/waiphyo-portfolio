@@ -21,32 +21,34 @@ import ProgressBar from "./components/common/others/ProgressBar";
 // Redux 
 import { fetchContact } from "./redux/features/contactSlice";
 
-// import data
-import data from "./__mock__/data.json"
+// Services
+import lsService from "./services/localStorage";
+
+// Data
+// import data from "./__mock__/data.json"
 
 // Style component
 import "./public/css/index.css";
 
 function App() {
-  const jsonInputRef = React.useRef(data);
+  // const jsonInputRef = React.useRef(data);
 
   const [onScrollY, setOnScrollY] = React.useState(0)
   const [showTopBtn, setShowTopBtn] = React.useState(false)
   const [showSocial, setShowSocial] = React.useState(false)
 
   const dispatch = useDispatch()
-  const contactStatus = useSelector((state) => state.contact.status)
-  const contactData = useSelector((state) => state.contact.data)
+  const contactData = useSelector((state) => state.contact)
 
   const handleJsonEditor = () => {
     console.log(jsonInputRef.current.state.jsObject)
   }
 
   React.useEffect(() => {
-    if (contactStatus === "pending") {
+    if (contactData.status === "pending") {
       dispatch(fetchContact())
     }
-  }, [contactStatus, dispatch])
+  }, [contactData, dispatch])
 
   return (
     <AppContext.Provider value={{
@@ -65,12 +67,12 @@ function App() {
         </div>
         <div className="div-relative">
           <AuthModal
-            authUser={{ user: "demo" }}
+            authStatus={lsService.getItem("authStatus")}
           />
         </div>
         <div className="div-relative">
           <ContactButton
-            contacts={contactData}
+            contacts={contactData.data}
           />
         </div>
         <div className="div-relative">

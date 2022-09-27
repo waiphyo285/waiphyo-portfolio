@@ -1,0 +1,150 @@
+{
+    "status": 200,
+    "result": [
+        {
+            "id": 1,
+            "title": "Who Am I?",
+            "paragraph": [
+                "I believe that people should do things they are good at or in which their hearts lie. That’s why I chose web development as my career because I believe I’m good at this and mas I am always honest, and I am never afraid of doing hard work. I have finished my graduation from the University of Computer Studies, Meiktila on Computer Science. I have taken many lessons on modern web design and development from these classes.",
+                "My educational background and training keep me in this carrer. I typically work as a Backend Developer  who constanly seek out innovative solutions to everyday problems. In my three years in this industory, I've honed my critical thinkings and collaboration skills, I love working with a team. In my short time there, I've already contributed to over a dozen projects and assisted with managing one project for one of the clients.",
+                "Although I'm a backend position, I really love both back-end technologies like Node.js and front-end technologies like React.js. So one thing is for sure, I'm still running. I'd like to be as a Full Stack Developer with a penchant for product development in future."
+            ]
+        },
+        {
+            "id": 2,
+            "title": "About",
+            "experiences": {
+                "title": "Experiences",
+                "icon": "bi-briefcase",
+                "data": [
+                    {
+                        "id": 1,
+                        "title": "Backend Developer",
+                        "sub-title": "Global New Wave Technology",
+                        "portfolio": "http://www.newwave-tech.com/",
+                        "duration": "Dec 2019 - Present"
+                    },
+                    {
+                        "id": 2,
+                        "title": "Junior Odoo Developer",
+                        "sub-title": "Global Connect Asia",
+                        "portfolio": "https://www.gca.com.mm/",
+                        "duration": "Aug 2019 - Nov 2019"
+                    },
+                    {
+                        "id": 3,
+                        "title": "Internship Program",
+                        "sub-title": "Global Connect Asia",
+                        "portfolio": "https://www.gca.com.mm/",
+                        "duration": "May 2019 - Jul 2019"
+                    }
+                ]
+            },
+            "educations": {
+                "title": "Educations",
+                "icon": "bi-mortarboard",
+                "data": [
+                    {
+                        "id": 1,
+                        "portfolio": "http://ucsmtla.edu.mm",
+                        "title": "Computer Science",
+                        "sub-title": "University of Computer Studies, Meiktila",
+                        "duration": "Dec 2014 - Aug 2019"
+                    }
+                ]
+            },
+            "hard-skills": {
+                "title": "Hard Skills",
+                "icon": "bi-code-square",
+                "data": [
+                    {
+                        "id": 1,
+                        "portfolio": "#",
+                        "title": "Front-End Development",
+                        "sub-title": "HTML, CSS, Bootstrap, JavaScript, JQuery, ReactJS, Redux"
+                    },
+                    {
+                        "id": 2,
+                        "portfolio": "#",
+                        "title": "Back-End Development",
+                        "sub-title": "Node.js, Express.js, Nest.js, MySQL, MongoDB, GraphQL, Redis"
+                    },
+                    {
+                        "id": 3,
+                        "portfolio": "#",
+                        "title": "Other Tools",
+                        "sub-title": "Git, CI-CD, Digital Ocean, AWS (EC2, Lightsail)"
+                    }
+                ]
+            },
+            "certifications": {
+                "title": "Certifications",
+                "icon": "bi-award",
+                "data": [
+                    {
+                        "id": 1,
+                        "portfolio": "https://www.mcpamyanmar.org/news/itpec-exam-result-exam-date-28-4-2019/attachment/60349795_2437410202946517_3601866690909962240_n/",
+                        "title": "IT Passport (IP19-2004)",
+                        "sub-title": "ITPEC held by the guidelines of Myanmar Computer Federation",
+                        "duration": "Jun 2019 - No Expired"
+                    }
+                ]
+            }
+        },
+        {
+            "id": 3,
+            "title": "Blogs",
+            "articles": [
+                {
+                    "id": 1,
+                    "title": "API Template with Dashboard",
+                    "tags": [
+                        "WebDev",
+                        "Node.js",
+                        "MongoDB",
+                        "MySQL",
+                        "Redis"
+                    ],
+                    "link": "https://github.com/waiphyo285/itemplate-backend",
+                    "paragraph": "I am introduced a simple API template for backend developers using clean architecture based on express application. This article is meant to help you with improved code."
+                },
+                {
+                    "id": 2,
+                    "title": "Visit Here - My Personal Notes.",
+                    "tags": [
+                        "WebDev",
+                        "JavaScript",
+                        "Programming",
+                        "LifeStyle"
+                    ],
+                    "link": "https://blog.waiphyonaing.me",
+                    "paragraph": "Blogging is a fun and flexible way for self-expression and social connection, so I want to share some of my career experiences especially about web development section."
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "title": "Contact",
+            "contacts": [
+                {
+                    "id": 1,
+                    "icon": "bi-geo-alt",
+                    "href": "#",
+                    "show-text": "Mayangon Tsp., Yangon, Myanmar"
+                },
+                {
+                    "id": 2,
+                    "icon": "bi-envelope",
+                    "href": "mailto:waiphyo.dev@gmail.com",
+                    "show-text": "waiphyo.dev@gmail.com"
+                },
+                {
+                    "id": 3,
+                    "icon": "bi-globe",
+                    "href": "https://waiphyonaing.me",
+                    "show-text": "www.waiphyonaing.me"
+                }
+            ]
+        }
+    ]
+}
