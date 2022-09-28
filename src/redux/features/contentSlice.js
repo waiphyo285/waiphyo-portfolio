@@ -14,7 +14,11 @@ export const fetchContent = createAsyncThunk('content/fetchInfo', async () => {
 const contentSlice = createSlice({
     name: 'content',
     initialState,
-    reducers: {},
+    reducers: {
+        updateData: (state, action) => {
+            state.data = action.payload.result;
+        },
+    },
     extraReducers(builder) {
         builder.addCase(fetchContent.fulfilled, (state, action) => {
             state.status = 'success'
@@ -22,5 +26,7 @@ const contentSlice = createSlice({
         })
     },
 })
+
+export const { updateData } = contentSlice.actions;
 
 export default contentSlice.reducer

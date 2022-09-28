@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import { useSnackbar } from 'react-simple-snackbar'
 
 function ContactFormComponent() {
-    const [formData, setFormData] = useState({
+    const [formData, setFormData] = React.useState({
         name: "",
         email: "",
         message: "",

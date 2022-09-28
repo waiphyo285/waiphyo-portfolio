@@ -25,10 +25,10 @@ export async function client(endpoint, { body, ...customConfig } = {}) {
         if (response.ok) {
             // Return a result object similar to Axios
             return {
+                url: response.url,
+                headers: response.headers,
                 status: response.status,
                 data,
-                headers: response.headers,
-                url: response.url,
             }
         }
         throw new Error(response.statusText)

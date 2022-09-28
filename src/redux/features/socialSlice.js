@@ -14,7 +14,11 @@ export const fetchSocial = createAsyncThunk('social/fetchInfo', async () => {
 const socialSlice = createSlice({
     name: 'social',
     initialState,
-    reducers: {},
+    reducers: {
+        updateData: (state, action) => {
+            state.data = action.payload.result;
+        },
+    },
     extraReducers(builder) {
         builder.addCase(fetchSocial.fulfilled, (state, action) => {
             state.status = 'success'
@@ -22,5 +26,7 @@ const socialSlice = createSlice({
         })
     },
 })
+
+export const { updateData } = socialSlice.actions;
 
 export default socialSlice.reducer

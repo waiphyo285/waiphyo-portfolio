@@ -14,7 +14,11 @@ export const fetchProject = createAsyncThunk('project/fetchInfo', async () => {
 const projectSlice = createSlice({
     name: 'project',
     initialState,
-    reducers: {},
+    reducers: {
+        updateData: (state, action) => {
+            state.data = action.payload.result;
+        },
+    },
     extraReducers(builder) {
         builder.addCase(fetchProject.fulfilled, (state, action) => {
             state.status = 'success'
@@ -22,5 +26,7 @@ const projectSlice = createSlice({
         })
     },
 })
+
+export const { updateData } = projectSlice.actions;
 
 export default projectSlice.reducer

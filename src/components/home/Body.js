@@ -1,22 +1,42 @@
-import React, { useState } from "react";
-// import ReactEmbedGist from 'react-embed-gist';
+import React from "react";
+import { useSelector, useDispatch } from 'react-redux'
 
-// body components
+// Body components
 import NavList from "./body/NavList";
 import TabContent from "./body/TabContent";
 
 // Context provider
 import BodyContext from "../../context/BodyContext";
 
-function BodyComponent({ navlist, contents }) {
+// Redux 
+import { fetchNav } from "../../redux/features/navlistSlice";
+import { fetchContent } from "../../redux/features/contentSlice";
+
+function BodyComponent() {
+  const dispatch = useDispatch()
+  const navlistData = useSelector((state) => state.navlist)
+  const contentData = useSelector((state) => state.content)
+
   const [isAnimate, setIsAnimate] = React.useState(false)
   const value = { isAnimate, setIsAnimate };
+
+  React.useEffect(() => {
+    if (navlistData.status === "pending") {
+      dispatch(fetchNav())
+    }
+  }, [navlistData, dispatch])
+
+  React.useEffect(() => {
+    if (contentData.status === "pending") {
+      dispatch(fetchContent())
+    }
+  }, [contentData, dispatch])
 
   return (
     <BodyContext.Provider value={value}>
       <div className="row">
-        <NavList navlist={navlist} />
-        <TabContent contents={contents} />
+        <NavList navlist={navlistData.data} />
+        <TabContent contents={contentData.data} />
       </div>
     </BodyContext.Provider>
   );

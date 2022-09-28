@@ -1,103 +1,57 @@
-import React, { useState } from "react";
-import { useSelector, useDispatch } from 'react-redux'
+import React from "react";
+import { Routes, Route, Navigate } from "react-router-dom";
 import SnackbarProvider from 'react-simple-snackbar'
 
-// Json Editor
-import JSONInput from 'react-json-editor-ajrm';
-import locale from 'react-json-editor-ajrm/locale/en';
+// Service storage
+import ssService from "./services/sessionStorage"
 
 // Context provider
 import AppContext from "./context/AppContext";
 
 // Pages component
-import HomePage from "./pages/home/index";
-
-// Common component
-import AuthModal from "./components/common/forms/AuthModal";
-import ContactButton from "./components/common/buttons/ContactButton";
-import ScrollTop from "./components/common/buttons/ScrollTopButton";
-import ProgressBar from "./components/common/others/ProgressBar";
-
-// Redux 
-import { fetchContact } from "./redux/features/contactSlice";
-
-// Data
-// import data from "./__mock__/data.json"
+import MainPage from "./pages/index";
+import ViewPage from "./pages/view";
+import NotFound from "./pages/404";
 
 // Style component
 import "./public/css/index.css";
 
+const ProtectedRoute = ({ user, children }) => {
+  if (!user) {
+    return <Navigate to="/" replace />;
+  }
+  return children;
+};
+
 function App() {
-  // const jsonInputRef = React.useRef(data);
+  const user = ssService.getItem("user")
 
   const [onScrollY, setOnScrollY] = React.useState(0)
   const [showTopBtn, setShowTopBtn] = React.useState(false)
   const [showSocial, setShowSocial] = React.useState(false)
 
-  const dispatch = useDispatch()
-  const contactData = useSelector((state) => state.contact)
-
-  const handleJsonEditor = () => {
-    console.log(jsonInputRef.current.state.jsObject)
-  }
-
-  React.useEffect(() => {
-    if (contactData.status === "pending") {
-      dispatch(fetchContact())
-    }
-  }, [contactData, dispatch])
-
   return (
-    <AppContext.Provider value={{
-      onScrollY,
-      setOnScrollY,
-      showTopBtn,
-      setShowTopBtn,
-      showSocial,
-      setShowSocial
-    }}>
+    <AppContext.Provider
+      value={{
+        onScrollY,
+        showTopBtn,
+        showSocial,
+        setShowTopBtn,
+        setOnScrollY,
+        setShowSocial
+      }}>
       <SnackbarProvider>
-        <div className="fixed-top">
-          <ProgressBar
-            scrollVal={onScrollY}
+        <Routes>
+          <Route exact path="/" element={<MainPage />} />
+          <Route path="/view"
+            element={
+              <ProtectedRoute user={user}>
+                <ViewPage />
+              </ProtectedRoute>
+            }
           />
-        </div>
-        <div className="div-relative">
-          <AuthModal
-            authStatus={{}}
-          />
-        </div>
-        <div className="div-relative">
-          <ContactButton
-            contacts={contactData.data}
-          />
-        </div>
-        <div className="div-relative">
-          <ScrollTop
-            scrollVal={onScrollY}
-          />
-        </div>
-        <div className="container">
-          <HomePage
-            data={{}}
-          />
-          {/* 
-            <button
-              className="btn btn-dark"
-              onClick={() => handleJsonEditor()}
-            >
-              Save
-            </button>
-            <JSONInput
-              id='a_unique_id'
-              ref={jsonInputRef}
-              placeholder={data}
-              locale={locale}
-              height='100vh'
-              width="100%"
-            /> 
-          */}
-        </div>
+          <Route exact path="*" element={<NotFound />} />
+        </Routes>
       </SnackbarProvider>
     </AppContext.Provider>
   );

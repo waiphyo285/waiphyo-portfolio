@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Radium, { StyleRoot } from "radium";
 import { fadeIn } from "react-animations";
 
@@ -29,20 +29,28 @@ function TabContentComponent({ contents }) {
                 className="tab-content"
                 style={isAnimate ? styles.fadeIn : null}
             >
-                <HomeContent
-                    contents={contents[0]}
-                />
-                <AboutContent
-                    contents={contents[1]}
-                />
-                <BlogContent
-                    contents={contents[2]}
-                />
-                <ContactContent
-                    contents={contents[3]}
-                />
+                {
+                    (contents && contents.length > 0)
+                        ? <>
+                            <HomeContent
+                                contents={contents[0]}
+                            />
+                            <AboutContent
+                                contents={contents[1]}
+                            />
+                            <BlogContent
+                                contents={contents[2]}
+                            />
+                            <ContactContent
+                                contents={contents[3]}
+                            />
+                        </>
+                        : <div className="text-center text-secondary py-5">
+                            Loading...
+                        </div>
+                }
             </div>
-        </StyleRoot>
+        </StyleRoot >
     );
 }
 

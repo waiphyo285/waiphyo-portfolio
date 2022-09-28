@@ -14,7 +14,11 @@ export const fetchContact = createAsyncThunk('contact/fetchInfo', async () => {
 const contactSlice = createSlice({
     name: 'contact',
     initialState,
-    reducers: {},
+    reducers: {
+        updateData: (state, action) => {
+            state.data = action.payload.result;
+        },
+    },
     extraReducers(builder) {
         builder.addCase(fetchContact.fulfilled, (state, action) => {
             state.status = 'success'
@@ -22,5 +26,8 @@ const contactSlice = createSlice({
         })
     },
 })
+
+export const { updateData } = contactSlice.actions;
+
 
 export default contactSlice.reducer

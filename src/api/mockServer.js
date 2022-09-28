@@ -1,21 +1,27 @@
 import { setupWorker, rest } from 'msw'
 
-import me from "../__mock__/me.json";
 import auth from "../__mock__/auth.json";
 import navlist from "../__mock__/navlist.json";
-import contents from "../__mock__/contents.json";
-import projects from "../__mock__/projects.json";
-import contacts from "../__mock__/contacts.json";
-import banners from "../__mock__/banners.json";
-import socials from "../__mock__/socials.json";
+import personal from "../__mock__/personal.json";
+import contents from "../__mock__/content.json";
+import projects from "../__mock__/project.json";
+import contacts from "../__mock__/contact.json";
+import banners from "../__mock__/banner.json";
+import socials from "../__mock__/social.json";
 
 // Session Storage
 import ssService from "../services/sessionStorage"
 
 // Add an extra delay to all endpoints
-const ARTIFICIAL_DELAY_MS = 2000
+const ARTIFICIAL_DELAY_MS = 1000
 
 const worker = setupWorker(
+    rest.post('/mockApi/update_portfolio', (req, res, ctx) => {
+        return res(
+            ctx.delay(0),
+            ctx.json(true)
+        )
+    }),
     rest.post('/mockApi/login', (req, res, ctx) => {
         const { username, password } = req.body
         const { username: mockUser, password: mockPass } = auth.result
@@ -37,10 +43,10 @@ const worker = setupWorker(
             ctx.json(true)
         )
     }),
-    rest.get('/mockApi/me', (req, res, ctx) => {
+    rest.get('/mockApi/personal', (req, res, ctx) => {
         return res(
             ctx.delay(ARTIFICIAL_DELAY_MS),
-            ctx.json(me.result)
+            ctx.json(personal.result)
         )
     }),
     rest.get('/mockApi/navlist', (req, res, ctx) => {

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import SwitchTheme from "../../common/buttons/SwitchTheme";
 import BodyContext from "../../../context/BodyContext";
 
@@ -13,7 +13,7 @@ function NavListComponent({ navlist }) {
             className="nav nav-pills nav-fill shadow-sm p-3 "
             style={{ position: "sticky", backgroundColor: "#286090", top: 3, zIndex: 1000 }}>
             {
-                navlist.map((nav, navIdx) => (
+                navlist && navlist.map((nav, navIdx) => (
                     <li className="nav-item" role="presentation" key={navIdx}>
                         <button
                             type="button"

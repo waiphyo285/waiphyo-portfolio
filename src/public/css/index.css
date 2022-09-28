@@ -14,10 +14,10 @@
   --third-font: "Myanmar Yinmar", sans-serif;
 }
 
-#root {
+/* #root {
   background: var(--dark-background);
   background: radial-gradient(circle, #0F55AA -88%, transparent 100%);
-}
+} */
 
 .theme-light {
   color: var(--light-text);
@@ -225,6 +225,13 @@ a {
   z-index: 20;
   right: 20px;
   bottom: 4.4rem;
+}
+
+.edit-data-btn {
+  position: fixed;
+  z-index: 20;
+  right: 20px;
+  top: 4.4rem;
 }
 
 .toggle-auth-btn {

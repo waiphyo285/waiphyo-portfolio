@@ -14,7 +14,11 @@ export const fetchNav = createAsyncThunk('navlist/fetchInfo', async () => {
 const navlistSlice = createSlice({
     name: 'navlist',
     initialState,
-    reducers: {},
+    reducers: {
+        updateData: (state, action) => {
+            state.data = action.payload.result;
+        },
+    },
     extraReducers(builder) {
         builder.addCase(fetchNav.fulfilled, (state, action) => {
             state.status = 'success'
@@ -22,5 +26,7 @@ const navlistSlice = createSlice({
         })
     },
 })
+
+export const { updateData } = navlistSlice.actions;
 
 export default navlistSlice.reducer

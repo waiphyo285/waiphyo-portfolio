@@ -7,14 +7,18 @@ const initialState = {
 }
 
 export const fetchMe = createAsyncThunk('me/fetchInfo', async () => {
-    const response = await client.get('/mockApi/me')
+    const response = await client.get('/mockApi/personal')
     return response.data
 })
 
 const meSlice = createSlice({
     name: 'me',
     initialState,
-    reducers: {},
+    reducers: {
+        updateData: (state, action) => {
+            state.data = action.payload.result;
+        },
+    },
     extraReducers(builder) {
         builder.addCase(fetchMe.fulfilled, (state, action) => {
             state.status = 'success'
@@ -22,5 +26,7 @@ const meSlice = createSlice({
         })
     },
 })
+
+export const { updateData } = meSlice.actions;
 
 export default meSlice.reducer

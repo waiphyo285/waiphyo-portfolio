@@ -14,7 +14,11 @@ export const fetchBanner = createAsyncThunk('banner/fetchInfo', async () => {
 const bannerSlice = createSlice({
     name: 'banner',
     initialState,
-    reducers: {},
+    reducers: {
+        updateData: (state, action) => {
+            state.data = action.payload.result;
+        },
+    },
     extraReducers(builder) {
         builder.addCase(fetchBanner.fulfilled, (state, action) => {
             state.status = 'success'
@@ -22,5 +26,7 @@ const bannerSlice = createSlice({
         })
     },
 })
+
+export const { updateData } = bannerSlice.actions;
 
 export default bannerSlice.reducer

@@ -26,5 +26,5 @@ https://stackoverflow.com/questions/55795125/how-to-send-email-from-my-react-web
 
 ### Github commit
 
-git remote set-url origin https://waiphyo285@github.com/waiphyo285/waiphyo285-portfolio.git
+git remote set-url origin https://waiphyo285@github.com/waiphyo285/time-with-arluma.git
 https://stackoverflow.com/questions/37813568/git-remote-repository-not-found

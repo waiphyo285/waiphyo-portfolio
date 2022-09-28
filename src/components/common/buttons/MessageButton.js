@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import AppContext from "../../../context/AppContext";
 
 const MessageButtonComponent = () => {

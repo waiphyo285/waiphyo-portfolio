@@ -3,7 +3,7 @@ import { useSnackbar } from 'react-simple-snackbar'
 import { useSelector, useDispatch } from 'react-redux'
 import { authLogin, authLogout } from "../../../redux/features/authSlice";
 
-const AuthModalComponent = ({ authStatus }) => {
+const AuthModalComponent = () => {
     const dispatch = useDispatch()
     const authData = useSelector((state) => state.auth)
 

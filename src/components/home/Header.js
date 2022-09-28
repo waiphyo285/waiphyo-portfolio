@@ -1,13 +1,22 @@
-import React, { useEffect } from "react";
+import React from "react";
+import { useSelector, useDispatch } from 'react-redux'
+
+// Redux 
+import { fetchMe } from '../../redux/features/meSlice'
+
+// Component
 import MyProfile from "./header/Profile";
 import getGreetingMsg from "../../utils/greeting-msg";
 
-function HeaderComponent({ personal }) {
+function HeaderComponent() {
+  const dispatch = useDispatch()
+  const personalData = useSelector((state) => state.personal)
+
   const [greetingText, setGreetingText] = React.useState(
     getGreetingMsg(new Date().getHours())
   );
 
-  useEffect(() => {
+  React.useEffect(() => {
     if (new Date().getMinutes() === 0) {
       const interval = setInterval(() => {
         setGreetingText(
@@ -18,25 +27,34 @@ function HeaderComponent({ personal }) {
     }
   }, []);
 
-  return (
-    <>
-      <div
-        className="row py-5 cover"
-      // style={{
-      //   backgroundImage: `url('../images/banner.png')`,
-      //   backgroundSize: 'cover',
-      //   backgroundPosition: 'center',
-      //   backgroundRepeat: 'no-repeat'
-      // }}
-      >
-        <MyProfile
-          profile_img={personal["profile-img"]}
-          fullname={personal["fullname"]}
-          greeting={greetingText}
-        />
-      </div>
-    </>
+  React.useEffect(() => {
+    if (personalData.status === "pending") {
+      dispatch(fetchMe())
+    }
+  }, [personalData, dispatch])
 
+  return (
+    <div
+      className="row py-5 cover"
+    // style={{
+    //   backgroundImage: `url('...')`,
+    //   backgroundSize: 'cover',
+    //   backgroundPosition: 'center',
+    //   backgroundRepeat: 'no-repeat'
+    // }}
+    >
+      {
+        personalData.status === "success"
+          ? <MyProfile
+            profile_img={personalData.data["profile-img"]}
+            fullname={personalData.data["fullname"]}
+            greeting={greetingText}
+          />
+          : <div className="text-center text-light" >
+            Loading...
+          </div>
+      }
+    </div>
   );
 }
 
