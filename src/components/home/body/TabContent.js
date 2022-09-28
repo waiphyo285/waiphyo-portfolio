@@ -46,7 +46,7 @@ function TabContentComponent({ contents }) {
                             />
                         </>
                         : <div className="text-center text-secondary py-5">
-                            Loading...
+                            <span className="bi-cloud-download"></span> Loading...
                         </div>
                 }
             </div>

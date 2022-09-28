@@ -34,7 +34,7 @@ function MainPage() {
             <div className="fixed-top">
                 <ProgressBar scrollVal={onScrollY} />
             </div>
-            <div className="div-relative">
+            <div className="relative">
                 <AuthModal />
                 <EditFormModal />
                 <ScrollTop scrollVal={onScrollY} />

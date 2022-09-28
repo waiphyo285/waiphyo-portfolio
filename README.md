@@ -1,6 +1,6 @@
 ![React Logo](https://github.com/vercel/vercel/blob/main/packages/frameworks/logos/react.svg)
 
-# My Bookmarks
+# My Portfolio
 
 This directory is a brief example of a [React](https://reactjs.org/) app with [Serverless Functions](https://vercel.com/docs/v2/serverless-functions/introduction) that can be deployed with Vercel and zero configuration.
 
@@ -23,8 +23,3 @@ $ npx create-react-app my-app
 ### Reference Links
 
 https://stackoverflow.com/questions/55795125/how-to-send-email-from-my-react-web-application
-
-### Github commit
-
-git remote set-url origin https://waiphyo285@github.com/waiphyo285/time-with-arluma.git
-https://stackoverflow.com/questions/37813568/git-remote-repository-not-found

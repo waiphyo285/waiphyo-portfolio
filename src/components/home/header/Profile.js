@@ -12,7 +12,7 @@ function ProfileComponent({ profile_img, fullname, greeting }) {
                         height={150}
                         width={150}
                     />
-                    <span className="bi bi-circle-fill text-info profile-dot"></span>
+                    <span className="bi-circle-fill text-info profile-dot"></span>
                 </figure>
                 <div className="text-light" >
                     <h1 className="title-name">

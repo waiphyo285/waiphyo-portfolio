@@ -51,7 +51,7 @@ function HeaderComponent() {
             greeting={greetingText}
           />
           : <div className="text-center text-light" >
-            Loading...
+            <span className="bi-cloud-download"></span> Loading...
           </div>
       }
     </div>
