@@ -19,9 +19,7 @@ function ContactContentComponent({ contents }) {
                 <div className="row shadow-sm px-3 py-4">
                     <h3 className="h3">{contents.title}</h3>
                     <div className="col-md-6">
-                        <ContactList
-                            contacts={contents.contacts}
-                        />
+                        <ContactList contacts={contents.contacts} />
                         <GoogleMap src="https://maps.google.com/maps?width=600&amp;height=220&amp;hl=en&amp;q=Mayangon&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed" />
                     </div>
                     <div className="col-md-6 mt-5 mt-sm-0">

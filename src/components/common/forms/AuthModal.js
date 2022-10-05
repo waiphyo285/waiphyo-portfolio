@@ -1,7 +1,9 @@
 import React from "react";
-import { useSnackbar } from 'react-simple-snackbar'
 import { useSelector, useDispatch } from 'react-redux'
 import { authLogin, authLogout } from "../../../redux/features/authSlice";
+
+// utils function
+import showSnackBar from "../../../utils/show-snackbar";
 
 const AuthModalComponent = () => {
     const dispatch = useDispatch()
@@ -10,13 +12,6 @@ const AuthModalComponent = () => {
     const [formData, setFormData] = React.useState({
         username: "",
         password: "",
-    })
-
-    const [openSnackbar, closeSnackbar] = useSnackbar({
-        style: {
-            color: '#3f3f3f',
-            backgroundColor: '#ffffff',
-        },
     })
 
     const handleChange = (e) => {
@@ -32,12 +27,12 @@ const AuthModalComponent = () => {
             .unwrap()
             .then((result) => {
                 if (result === null) {
-                    openSnackbar("Sorry, username or password went wrong!")
+                    showSnackBar('Sorry, username or password went wrong!', 'warning');
                 }
                 else {
                     document.getElementById('closeModal').click();
-                    openSnackbar("You are successfully logged in!")
                     setTimeout(() => window.location.reload(), 3000);
+                    showSnackBar('You are successfully logged in!', 'success');
                 }
             })
             .catch((error) => {
@@ -130,8 +125,9 @@ const AuthModalComponent = () => {
                         href="#logout"
                         onClick={() => {
                             dispatch(authLogout())
-                            openSnackbar("You are successfully logged out!")
                             setTimeout(() => window.location.reload(), 3000);
+                            showSnackBar('You are successfully logged out!', 'success');
+
                         }}
                         className="btn gradient-btn toggle-auth-btn d-none d-lg-inline"
                     >

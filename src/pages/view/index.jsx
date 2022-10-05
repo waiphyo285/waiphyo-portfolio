@@ -1,6 +1,5 @@
 import React from "react";
 import { useDispatch } from 'react-redux'
-import { useSnackbar } from 'react-simple-snackbar'
 import { useNavigate, useSearchParams } from 'react-router-dom';
 
 // Json Editor
@@ -9,6 +8,9 @@ import locale from 'react-json-editor-ajrm/locale/en';
 
 // Mock client
 import { client } from "../../api/mockClient";
+
+// Utils function
+import showSnackBar from "../../utils/show-snackbar";
 
 // Common component
 import SeparateHeader from "../../components/common/others/SeparateHeader";
@@ -29,17 +31,11 @@ function ViewPage() {
     const [data, setData] = React.useState(null)
     const jsonInputRef = React.useRef(data)
 
-    const [openSnackbar, closeSnackbar] = useSnackbar({
-        style: {
-            color: '#3f3f3f',
-            backgroundColor: '#ffffff',
-        },
-    })
-
     const serviceType = searchParams.get("serviceType") || "personal";
 
     const switchAction = (section) => {
         let updateAction = updatePersonal;
+
         switch (section) {
             case "personal":
                 updateAction = updatePersonal; break;
@@ -56,7 +52,7 @@ function ViewPage() {
             case "social":
                 updateAction = updateSocial; break;
             default:
-                updateAction = updatePersonal; break;
+                break;
         }
         return updateAction;
     }
@@ -66,9 +62,10 @@ function ViewPage() {
             dispatch(
                 switchAction(serviceType)(jsonInputRef.current.state.jsObject)
             )
+            showSnackBar("See the changes that you update information!", "success")
         }
         else {
-            openSnackbar("No edited data, please edit your content!")
+            showSnackBar("No edited data, please edit your content!", "warning")
         }
     }
 
@@ -86,7 +83,7 @@ function ViewPage() {
             link.click();
         }
         else {
-            openSnackbar("No edited data, please edit your content!")
+            showSnackBar("No edited data, please edit your content!", "warning")
         }
     }
 
@@ -120,7 +117,7 @@ function ViewPage() {
                 height='440px'
                 width="100%"
             />
-            <div className="d-flex justify-content-end my-2">
+            <div className="d-flex justify-content-end my-3">
                 <button
                     className="btn btn-light"
                     onClick={() => {

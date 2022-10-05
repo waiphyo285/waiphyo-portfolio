@@ -1,6 +1,7 @@
 import React from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
-import SnackbarProvider from 'react-simple-snackbar'
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 // Service storage
 import ssService from "./services/sessionStorage"
@@ -40,19 +41,18 @@ function App() {
         setOnScrollY,
         setShowSocial
       }}>
-      <SnackbarProvider>
-        <Routes>
-          <Route exact path="/" element={<MainPage />} />
-          <Route path="/view"
-            element={
-              <ProtectedRoute user={user}>
-                <ViewPage />
-              </ProtectedRoute>
-            }
-          />
-          <Route exact path="*" element={<NotFound />} />
-        </Routes>
-      </SnackbarProvider>
+      <Routes>
+        <Route exact path="/" element={<MainPage />} />
+        <Route path="/view"
+          element={
+            <ProtectedRoute user={user}>
+              <ViewPage />
+            </ProtectedRoute>
+          }
+        />
+        <Route exact path="*" element={<NotFound />} />
+      </Routes>
+      <ToastContainer />
     </AppContext.Provider>
   );
 }

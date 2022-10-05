@@ -97,19 +97,29 @@
             "articles": [
                 {
                     "id": 1,
-                    "title": "API Template with Dashboard",
+                    "title": "My Portfolio Site",
                     "tags": [
                         "WebDev",
+                        "React.js",
+                        "Redux"
+                    ],
+                    "link": "https://github.com/waiphyo285/waiphyo-portfolio",
+                    "paragraph": "This is the source code for this project you have visited. And I have designed and developed with react.js using redux/redux-toolkit state management."
+                },
+                {
+                    "id": 2,
+                    "title": "API Template with Dashboard",
+                    "tags": [
                         "Node.js",
                         "MongoDB",
                         "MySQL",
                         "Redis"
                     ],
                     "link": "https://github.com/waiphyo285/itemplate-backend",
-                    "paragraph": "I am introduced a simple API template for backend developers using clean architecture based on express application. This article is meant to help you with improved code."
+                    "paragraph": "I am introduced a simple API template for backend developers using clean architecture based on express application. This repository is meant to help you with improved code."
                 },
                 {
-                    "id": 2,
+                    "id": 3,
                     "title": "Visit Here - My Personal Notes.",
                     "tags": [
                         "WebDev",

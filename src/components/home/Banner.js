@@ -1,5 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from 'react-redux'
+import { Player } from "@lottiefiles/react-lottie-player";
 import SeparateHeader from "../common/others/SeparateHeader";
 
 // Redux 
@@ -21,19 +22,18 @@ function BannerComponent() {
         <SeparateHeader headerName={"Let's talk about code & coffee"} />
         {
           (bannerData.data && bannerData.data.length > 0)
-            ? bannerData.data.map((sponsor, sponIdx) => (
+            ? bannerData.data.map((banner, bannerIdx) => (
               <div
-                key={sponIdx}
+                key={bannerIdx}
                 className="col-md-6 mt-4"
               >
                 <div className="shadow-sm">
-                  <lottie-player
-                    src={sponsor.src}
-                    style={{ height: "200px" }}
-                    loop="true"
-                    speed="0.3"
+                  <Player
+                    loop
                     autoplay
-                  ></lottie-player>
+                    src={banner.src}
+                    style={{ height: "200px" }}
+                  />
                 </div>
               </div>
             ))

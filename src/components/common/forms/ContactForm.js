@@ -1,5 +1,7 @@
 import React from "react";
-import { useSnackbar } from 'react-simple-snackbar'
+
+// utils function
+import showSnackBar from "../../../utils/show-snackbar";
 
 function ContactFormComponent() {
     const [formData, setFormData] = React.useState({
@@ -7,14 +9,6 @@ function ContactFormComponent() {
         email: "",
         message: "",
     });
-
-    const [openSnackbar, closeSnackbar] = useSnackbar({
-        style: {
-            fontSize: '18px',
-            textAlign: 'center',
-            border: '1px solid #ffc100',
-        },
-    })
 
     const handleChange = (e) => {
         setFormData({
@@ -34,10 +28,10 @@ function ContactFormComponent() {
             Body: `${message}`
         }).then((message) => {
             if (message === "OK") {
-                openSnackbar("I've received your message, I'll get back soon.")
+                showSnackBar("I've received your message, I'll get back soon!", "success")
             }
             else {
-                openSnackbar("Oops! your message can't send, please try again.")
+                showSnackBar("Oops! your message can't send, please try again!", "warning")
             }
         });
     };

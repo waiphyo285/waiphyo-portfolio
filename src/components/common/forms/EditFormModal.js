@@ -66,7 +66,7 @@ const EditDataModalComponent = () => {
                                         {
                                             ["personal", "navlist", "content", "project", "banner", "contact", "social"].map((value, idx) => {
                                                 return (
-                                                    <div className="form-check form-check-inline" key={idx}>
+                                                    <div className="form-check form-check-inline my-2" key={idx}>
                                                         <input
                                                             className="form-check-input"
                                                             name="serviceType"
