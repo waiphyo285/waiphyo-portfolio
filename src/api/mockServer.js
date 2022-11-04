@@ -1,13 +1,13 @@
 import { setupWorker, rest } from 'msw'
 
-import auth from "../__mock__/auth.json";
-import navlist from "../__mock__/navlist.json";
-import personal from "../__mock__/personal.json";
-import contents from "../__mock__/content.json";
-import projects from "../__mock__/project.json";
-import contacts from "../__mock__/contact.json";
-import banners from "../__mock__/banner.json";
-import socials from "../__mock__/social.json";
+import auth from "../mock/auth.json";
+import navlist from "../mock/navlist.json";
+import personal from "../mock/personal.json";
+import contents from "../mock/content.json";
+import projects from "../mock/project.json";
+import contacts from "../mock/contact.json";
+import banners from "../mock/banner.json";
+import socials from "../mock/social.json";
 
 // Session Storage
 import ssService from "../services/sessionStorage"
@@ -66,6 +66,23 @@ const worker = setupWorker(
             ctx.delay(ARTIFICIAL_DELAY_MS),
             ctx.json(projects.result)
         )
+    }),
+    rest.get('/mockApi/repository', async (req, res, ctx) => {
+
+        async function fetchRepoJSON(username) {
+            const pin_repo = ["itemplate-node-js", "waiphyo-portfolio", "learning-nest-js", "learning-next-js", "graphql-examples", "burmese-measure"]
+            const response = await fetch(`https://api.github.com/users/${username}/repos?per_page=100`);
+            const repositories = await response.json();
+            const filter_repositories = repositories.filter(r => !r.fork && pin_repo.includes(r.name))
+            return filter_repositories;
+        }
+
+        const repositories = await fetchRepoJSON('waiphyo285');
+
+        return res(
+            ctx.delay(ARTIFICIAL_DELAY_MS),
+            ctx.json(repositories)
+        );
     }),
     rest.get('/mockApi/contact', (req, res, ctx) => {
         return res(

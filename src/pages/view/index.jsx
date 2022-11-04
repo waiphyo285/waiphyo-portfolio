@@ -99,6 +99,7 @@ function ViewPage() {
                 })
                 .catch((error) => {
                     console.log("Load Error ", error)
+                    showSnackBar('Something went wrong!', 'warning');
                 })
         }
 

@@ -1,7 +1,7 @@
 import React from "react";
+import ReactGA from 'react-ga';
 import { Routes, Route, Navigate } from "react-router-dom";
 import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 
 // Service storage
 import ssService from "./services/sessionStorage"
@@ -15,7 +15,12 @@ import ViewPage from "./pages/view";
 import NotFound from "./pages/404";
 
 // Style component
-import "./public/css/index.css";
+import 'react-toastify/dist/ReactToastify.css';
+import "./assets/css/index.css";
+
+// need to more configure
+const TRACKING_ID = "G-YOUR CODE HERE"
+ReactGA.initialize(TRACKING_ID);
 
 const ProtectedRoute = ({ user, children }) => {
   if (!user) {

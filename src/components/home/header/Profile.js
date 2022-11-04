@@ -1,5 +1,4 @@
 import React from "react";
-import { RandomReveal } from 'react-random-reveal'
 
 function ProfileComponent({ profile_img, fullname, greeting }) {
     return (
@@ -19,11 +18,7 @@ function ProfileComponent({ profile_img, fullname, greeting }) {
                         {fullname}
                     </h1>
                     <span className="mx-2 greeting">
-                        <RandomReveal
-                            isPlaying
-                            duration={5}
-                            characters={greeting}
-                        />
+                        {greeting}
                     </span>
                 </div>
             </div>

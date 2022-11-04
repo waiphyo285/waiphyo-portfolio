@@ -90,7 +90,7 @@ const EditDataModalComponent = () => {
                                         >
                                             Cancel
                                         </button>
-                                        <button type="submit" className="btn btn-dark">
+                                        <button type="submit" className="btn gradient-btn">
                                             <i className={"bi-pen"}></i> Edit
                                         </button>
                                     </div>

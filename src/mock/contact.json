@@ -5,19 +5,19 @@
             "id": 1,
             "href": "https://wa.me/959969616725",
             "icon": "bi-whatsapp",
-            "color": "#25d366"
+            "color": "#dfdfdf"
         },
         {
             "id": 2,
             "href": "https://join.skype.com/invite/WJJFRXLTcCG9",
             "icon": "bi-skype",
-            "color": "#00aff0"
+            "color": "#dfdfdf"
         },
         {
             "id": 3,
             "href": "mailto:waiphyo.dev@gmail.com",
             "icon": "bi-envelope",
-            "color": "#ea4335"
+            "color": "#dfdfdf"
         }
     ]
 }

@@ -13,7 +13,7 @@ function AboutContentComponent({ contents }) {
                 role="tabpanel"
                 aria-labelledby="about-tab"
             >
-                <div className="row shadow-sm px-3 py-4">
+                <div className="row py-4">
                     <h3 className="h3">{contents["title"]}</h3>
                     <div className="col-sm-3">
                         <div className="list-group" id="list-tab" role="tablist">
@@ -23,38 +23,38 @@ function AboutContentComponent({ contents }) {
                             <AboutMenu contents={contents} menuName={"certifications"} isActive={""} />
                         </div>
                     </div>
-                    <div className="col-sm-9 mt-5 mt-sm-0">
+                    <div className="col-sm-9 mt-4 mt-sm-0">
                         <div className="tab-content" id="nav-tabContent">
                             <div
-                                className="tab-pane fade show active"
                                 id="list-experiences" role="tabpanel"
                                 aria-labelledby="list-experiences-list"
+                                className="list-group tab-pane fade show active"
                             >
                                 {/* <h5 className="h5">{contents["experiences"]["title"]}</h5> */}
                                 <AboutList contents={contents["experiences"]["data"]} />
                             </div>
                             <div
-                                className="tab-pane fade"
-                                id="list-hard-skills"
                                 role="tabpanel"
+                                id="list-hard-skills"
+                                className="list-group tab-pane fade"
                                 aria-labelledby="list-hard-skills-list"
                             >
                                 {/* <h5 className="h5">{contents["hard-skills"]["title"]}</h5> */}
                                 <AboutList contents={contents["hard-skills"]["data"]} />
                             </div>
                             <div
-                                className="tab-pane fade"
-                                id="list-educations"
                                 role="tabpanel"
+                                id="list-educations"
+                                className="list-group tab-pane fade"
                                 aria-labelledby="list-educations-list"
                             >
                                 {/* <h5 className="h5">{contents["educations"]["title"]}</h5> */}
                                 <AboutList contents={contents["educations"]["data"]} />
                             </div>
                             <div
-                                className="tab-pane fade"
-                                id="list-certifications"
                                 role="tabpanel"
+                                id="list-certifications"
+                                className="list-group tab-pane fade"
                                 aria-labelledby="list-certifications-list"
                             >
                                 {/* <h5 className="h5">{contents["certifications"]["title"]}</h5> */}

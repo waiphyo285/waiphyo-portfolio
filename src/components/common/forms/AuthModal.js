@@ -37,6 +37,7 @@ const AuthModalComponent = () => {
             })
             .catch((error) => {
                 console.log("Login Error ", error)
+                showSnackBar('Something went wrong!', 'warning');
             });
     };
 
@@ -112,7 +113,7 @@ const AuthModalComponent = () => {
                                             >
                                                 Cancel
                                             </button>
-                                            <button type="submit" className="btn btn-dark">
+                                            <button type="submit" className="btn gradient-btn">
                                                 <i className={"bi-box-arrow-in-right"}></i> Login
                                             </button>
                                         </div>

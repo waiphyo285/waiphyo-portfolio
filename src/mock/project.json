@@ -16,7 +16,7 @@
                     "name": "Live",
                     "link": "http://hpmin.unlocksth.site/",
                     "icon": "bi-link-45deg",
-                    "isShow": false
+                    "isShow": true
                 }
             ],
             "images": [
@@ -42,7 +42,7 @@
                     "name": "Live",
                     "link": "http://hyper.unlocksth.site/",
                     "icon": "bi-link-45deg",
-                    "isShow": false
+                    "isShow": true
                 }
             ],
             "images": [
@@ -67,8 +67,8 @@
                 {
                     "name": "Live",
                     "link": "http://kwmin.unlocksth.site/",
-                    "icon": "bi-github",
-                    "isShow": false
+                    "icon": "bi-link-45deg",
+                    "isShow": true
                 }
             ],
             "images": [
@@ -91,8 +91,8 @@
                 {
                     "name": "Live",
                     "link": "http://khoway.unlocksth.site/",
-                    "icon": "bi-github",
-                    "isShow": false
+                    "icon": "bi-link-45deg",
+                    "isShow": true
                 }
             ],
             "images": [

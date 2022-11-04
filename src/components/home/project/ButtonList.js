@@ -2,7 +2,7 @@ import React from "react";
 
 function ButtonListComponent({ buttons }) {
     return (
-        <div className="m-md-4 m-sm-3 m-xs-2">
+        <div className="">
             {
                 buttons.map((button, btnIdx) => {
                     return button.isShow ? (
@@ -16,7 +16,8 @@ function ButtonListComponent({ buttons }) {
                     ) : (
                         <span key={btnIdx}></span>
                     );
-                })}
+                })
+            }
         </div>
     );
 }

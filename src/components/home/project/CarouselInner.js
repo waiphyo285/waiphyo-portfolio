@@ -1,11 +1,11 @@
 import React from "react";
 import Img from 'react-cool-img';
 import ButtonList from "./ButtonList";
-import defaultImg from "../../../public/images/default-project.png"
+import defaultImg from "../../../assets/images/default-project.png"
 
 function CarouselInnerComponent({ project }) {
-    const { title, description, images, buttons } = project;
-    const [isMouseOver, setMouseOver] = React.useState(false);
+    const { images } = project;
+    // const [isMouseOver, setMouseOver] = React.useState(false);
 
     return (
         <div className="carousel-inner">
@@ -18,9 +18,8 @@ function CarouselInnerComponent({ project }) {
                                 ? "carousel-item active"
                                 : "carousel-item"
                         }
-                        onMouseOver={() => setMouseOver(true)}
-                        onMouseOut={() => setMouseOver(false)}
-
+                    // onMouseOver={() => setMouseOver(true)}
+                    // onMouseOut={() => setMouseOver(false)}
                     >
                         <Img
                             debounce={300}
@@ -29,11 +28,6 @@ function CarouselInnerComponent({ project }) {
                             placeholder={defaultImg}
                             className="d-block w-100"
                         />
-                        <div className="carousel-caption">
-                            <div className={`${isMouseOver ? "d-block" : "d-none"}`}>
-                                <ButtonList buttons={buttons} />
-                            </div>
-                        </div>
                     </div>
                 );
             })}

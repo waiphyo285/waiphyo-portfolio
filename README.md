@@ -19,7 +19,3 @@ To get started with React, along with [Serverless Functions](https://vercel.com/
 ```shell
 $ npx create-react-app my-app
 ```
-
-### Reference Links
-
-https://stackoverflow.com/questions/55795125/how-to-send-email-from-my-react-web-application

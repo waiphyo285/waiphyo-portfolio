@@ -9,7 +9,7 @@ function ArticleListComponent({ articles }) {
                     articles.map((article, artIdx) => (
                         <div
                             key={artIdx}
-                            className="col-md-4 article"
+                            className="col-md-4 my-2 my-sm-0 article"
                             onClick={() => window.open(article.link, "_blank")}
                         >
                             <div className="col-md-12">

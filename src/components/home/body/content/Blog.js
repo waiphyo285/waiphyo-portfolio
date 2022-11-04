@@ -13,7 +13,7 @@ function BlogContentComponent({ contents }) {
                 role="tabpanel"
                 aria-labelledby="blog-tab"
             >
-                <div className="row shadow-sm px-3 py-4">
+                <div className="row py-4">
                     <h3 className="h3">{contents["title"]}</h3>
                     <ArticleList articles={contents.articles} />
                     {/* 

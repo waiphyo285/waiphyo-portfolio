@@ -38,7 +38,9 @@ function BannerComponent() {
               </div>
             ))
             : <div className="text-center text-secondary py-5">
-              <span className="bi-cloud-download"></span> Loading...
+              <div className="spinner-grow" role="status">
+                <span className="sr-only"></span>
+              </div>
             </div>
         }
       </div>

@@ -6,6 +6,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import HeaderComponent from "../../components/home/Header";
 import BodyComponent from "../../components/home/Body";
 import ProjectComponent from "../../components/home/Project";
+import RepoComponent from "../../components/home/Repository";
 import BannerComponent from "../../components/home/Banner";
 import FooterComponent from "../../components/home/Footer";
 
@@ -13,7 +14,7 @@ import FooterComponent from "../../components/home/Footer";
 import { fetchMe } from "../../redux/features/meSlice";
 
 // Loading
-import "../../public/css/loading.css"
+import "../../assets/css/loading.css"
 
 function HomePage() {
   const dispatch = useDispatch()
@@ -45,6 +46,7 @@ function HomePage() {
         <HeaderComponent />
         <BodyComponent />
         <ProjectComponent />
+        <RepoComponent />
         <BannerComponent />
         <FooterComponent />
       </>

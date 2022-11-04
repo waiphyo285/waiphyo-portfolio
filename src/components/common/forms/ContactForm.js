@@ -39,7 +39,7 @@ function ContactFormComponent() {
     return (
         <div className="shadow-sm">
             <form className="p-2" onSubmit={handleSubmit} method="post">
-                <div className="form-group m-2 mb-4">
+                <div className="form-group m-2 mb-3">
                     <label htmlFor="name">Name</label>
                     <input
                         type="text"
@@ -52,7 +52,7 @@ function ContactFormComponent() {
                         required
                     />
                 </div>
-                <div className="form-group m-2 mb-4">
+                <div className="form-group m-2 mb-3">
                     <label htmlFor="email">Email</label>
                     <input
                         type="email"
@@ -65,7 +65,7 @@ function ContactFormComponent() {
                         required
                     />
                 </div>
-                <div className="form-group m-2 mb-4">
+                <div className="form-group m-2 mb-3">
                     <label htmlFor="message">Message</label>
                     <textarea
                         value={formData.message}
@@ -80,7 +80,7 @@ function ContactFormComponent() {
                 </div>
                 <div className="form-group m-2 pb-2">
                     <hr />
-                    <button type="submit" className="btn btn-dark form-control">
+                    <button type="submit" className="btn gradient-btn form-control">
                         <i className="bi-send" /> Submit
                     </button>
                 </div>

@@ -6,6 +6,7 @@ import { zoomIn } from "react-animations";
 // project components
 import CarouselInner from "./project/CarouselInner";
 import PrevNextButton from "./project/PrevNextButton";
+import ButtonList from "./project/ButtonList";
 
 // common components
 import SeparateHeader from "../common/others/SeparateHeader";
@@ -13,7 +14,7 @@ import SeparateHeader from "../common/others/SeparateHeader";
 // Redux 
 import { fetchProject } from "../../redux/features/projectSlice";
 
-let styles = {
+const styles = {
   zoomIn: {
     duration: 5,
     animation: "x 5s",
@@ -33,7 +34,7 @@ function ProjectComponent() {
 
   return (
     <div className="row my-4">
-      <SeparateHeader headerName={"Personal Projects"} />
+      <SeparateHeader headerName={"My Team Projects"} />
       {
         (projectData.data && projectData.data.length > 0)
           ? projectData.data.map((project, pjIdx) => {
@@ -49,16 +50,20 @@ function ProjectComponent() {
                       <CarouselInner project={project} />
                       <PrevNextButton projectId={pjIdx} />
                     </div>
-                    <span className="d-block text-center py-2">
-                      {project.title}
-                    </span>
+
+                    <div className="d-grid gap-2 mt-2 text-center">
+                      <span>{project.title}</span>
+                      <ButtonList buttons={project.buttons} />
+                    </div>
                   </div>
                 </StyleRoot>
               )
             );
           })
           : <div className="text-center text-secondary py-5">
-            <span className="bi-cloud-download"></span> Loading...
+            <div className="spinner-grow" role="status">
+              <span className="sr-only"></span>
+            </div>
           </div>
       }
     </div >

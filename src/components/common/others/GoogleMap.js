@@ -2,7 +2,7 @@ import React from "react";
 
 function MapEmbedComponent({ src }) {
     return (
-        <div className="mapouter shadow-sm mt-5">
+        <div className="mapouter shadow-sm mt-4">
             <div className="gmap_canvas">
                 <iframe
                     width="100%"

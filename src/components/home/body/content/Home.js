@@ -12,7 +12,7 @@ function HomeContentComponent({ contents }) {
                 role="tabpanel"
                 aria-labelledby="home-tab"
             >
-                <div className="row shadow-sm px-3 py-4">
+                <div className="row py-4">
                     <div className="col-md-12">
                         <h3 className="h3">{contents?.["title"]}</h3>
                         <ParamList params={contents.paragraph} />

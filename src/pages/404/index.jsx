@@ -1,7 +1,7 @@
 import React from "react";
 
 // Style component
-import "../../public/css/404.css";
+import "../../assets/css/404.css";
 
 function NotFound() {
     return (
