@@ -14,14 +14,9 @@
   --third-font: "Myanmar Yinmar", sans-serif;
 }
 
-/* #root {
-  background: var(--dark-background);
-  background: radial-gradient(circle, #0F55AA -88%, transparent 100%);
-} */
-
 .theme-light {
   color: var(--light-text);
-  background: var(--light-background)
+  background: var(--light-background);
 }
 
 .theme-dark {
@@ -60,14 +55,14 @@ body {
   margin: 0;
   padding: 0;
   height: 100%;
-  font-family: var(--second-font);
+  font-family: var(--primary-font);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 a {
   font-size: 18x !important;
-  color: var(--primary-color);
+  color: var(--third-color);
   text-decoration: none;
 }
 
@@ -80,34 +75,29 @@ p {
 
 input,
 textarea {
+  border: none !important;
   background: transparent !important;
   color: var(--third-color) !important;
-  border-color: var(--third-color) !important;
+  box-shadow: 0 0 0.1rem var(--third-color) !important;
 }
 
 /* Header */
 
 .cover {
   background: var(--dark-background);
-  background: linear-gradient(90deg, var(--primary-color), var(--primary-color));
+  background: linear-gradient(
+    90deg,
+    var(--primary-color),
+    var(--primary-color)
+  );
 }
 
 .title-name {
   font-size: 28px !important;
   font-weight: bold !important;
-  font-family: var(--primary-font);
-}
-
-.profile-dot {
-  position: absolute;
-  font-size: 20px;
-  top: 120px;
-  right: 38px;
 }
 
 /* Body */
-
-.article {}
 
 .article:hover {
   padding: 18px;
@@ -136,7 +126,6 @@ textarea {
 .separator .line {
   flex: 1;
   height: 1px;
-  background: var(--light-background);
 }
 
 /* Map */
@@ -169,7 +158,10 @@ textarea {
 
 .nav-link.active {
   background: transparent !important;
-  border-bottom: 5px solid var(--second-color) !important;
+}
+
+.nav-link.active span {
+  border-bottom: 5px solid var(--second-color);
 }
 
 .about-nav-item,
@@ -181,8 +173,7 @@ textarea {
 
 .about-nav-item.active {
   background: none !important;
-  color: var(--primary-color) !important;
-  border: 1px solid rgba(0, 0, 0, .125);
+  /* color: var(--second-color) !important; */
   border-left: 5px solid var(--second-color) !important;
 }
 
@@ -194,6 +185,7 @@ textarea {
 }
 
 .list-group-item {
+  color: var(--third-color);
   padding: 8.8px 15px;
   background: transparent !important;
 }
@@ -247,16 +239,18 @@ textarea {
   bottom: 20px;
 }
 
-.gradient-btn {
-  border: none;
-  color: var(--light-text);
-  background: var(--light-background);
+.submit-btn,
+.submit-btn:hover {
+  color: var(--second-color);
+  background: var(--primary-color);
 }
 
+.gradient-btn,
 .gradient-btn:hover {
-  box-shadow: 0px 0px 1px 3px var(--light-background);
-  -moz-box-shadow: 0px 0px 1px 3px var(--light-background);
-  -webkit-box-shadow: 0px 0px 1px 3px var(--light-background);
+  color: var(--second-color);
+  background: var(--primary-color);
+  /* clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  -webkit-clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%); */
 }
 
 /* Social */
@@ -285,22 +279,39 @@ textarea {
 /* Github card */
 
 .github-card {
-  display: block;
+  display: table;
   text-decoration: none;
   box-sizing: border-box;
+  min-height: 150px;
+  min-width: 100%;
   cursor: pointer;
 }
 
-.github-card>h3 {
-  color: var(--primary-color);
+.github-card > h3 {
   font-size: 18px;
+  /* color: var(--second-color); */
 }
 
 .github-card__desc {
   display: block;
+  color: var(--third-color);
   margin-bottom: 10px;
 }
 
 .github-card__meta {
+  color: var(--third-color);
   margin-right: 20px;
+}
+
+.github-card__center {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+/* Footer */
+
+.footer {
+  position: static;
+  border-bottom: 5px solid var(--second-color);
 }

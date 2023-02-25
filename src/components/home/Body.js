@@ -1,5 +1,5 @@
 import React from "react";
-import { useSelector, useDispatch } from 'react-redux'
+import { useSelector, useDispatch } from "react-redux";
 
 // Body components
 import NavList from "./body/NavList";
@@ -8,29 +8,29 @@ import TabContent from "./body/TabContent";
 // Context provider
 import BodyContext from "../../context/BodyContext";
 
-// Redux 
+// Redux
 import { fetchNav } from "../../redux/features/navlistSlice";
 import { fetchContent } from "../../redux/features/contentSlice";
 
 function BodyComponent() {
-  const dispatch = useDispatch()
-  const navlistData = useSelector((state) => state.navlist)
-  const contentData = useSelector((state) => state.content)
+  const dispatch = useDispatch();
+  const navlistData = useSelector((state) => state.navlist);
+  const contentData = useSelector((state) => state.content);
 
-  const [isAnimate, setIsAnimate] = React.useState(false)
+  const [isAnimate, setIsAnimate] = React.useState(false);
   const value = { isAnimate, setIsAnimate };
 
   React.useEffect(() => {
     if (navlistData.status === "pending") {
-      dispatch(fetchNav())
+      dispatch(fetchNav());
     }
-  }, [navlistData, dispatch])
+  }, [navlistData, dispatch]);
 
   React.useEffect(() => {
     if (contentData.status === "pending") {
-      dispatch(fetchContent())
+      dispatch(fetchContent());
     }
-  }, [contentData, dispatch])
+  }, [contentData, dispatch]);
 
   return (
     <BodyContext.Provider value={value}>

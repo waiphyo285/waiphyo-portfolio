@@ -1,10 +1,10 @@
 import React from "react";
-import ReactGA from 'react-ga';
+import ReactGA from "react-ga";
 import { Routes, Route, Navigate } from "react-router-dom";
-import { ToastContainer } from 'react-toastify';
+import { ToastContainer } from "react-toastify";
 
 // Service storage
-import ssService from "./services/sessionStorage"
+import ssService from "./services/sessionStorage";
 
 // Context provider
 import AppContext from "./context/AppContext";
@@ -15,11 +15,11 @@ import ViewPage from "./pages/view";
 import NotFound from "./pages/404";
 
 // Style component
-import 'react-toastify/dist/ReactToastify.css';
+import "react-toastify/dist/ReactToastify.css";
 import "./assets/css/index.css";
 
 // need to more configure
-const TRACKING_ID = "G-YOUR CODE HERE"
+const TRACKING_ID = "G-FZC8TC76L2";
 ReactGA.initialize(TRACKING_ID);
 
 const ProtectedRoute = ({ user, children }) => {
@@ -30,11 +30,11 @@ const ProtectedRoute = ({ user, children }) => {
 };
 
 function App() {
-  const user = ssService.getItem("user")
+  const user = ssService.getItem("user");
 
-  const [onScrollY, setOnScrollY] = React.useState(0)
-  const [showTopBtn, setShowTopBtn] = React.useState(false)
-  const [showSocial, setShowSocial] = React.useState(false)
+  const [onScrollY, setOnScrollY] = React.useState(0);
+  const [showTopBtn, setShowTopBtn] = React.useState(false);
+  const [showSocial, setShowSocial] = React.useState(false);
 
   return (
     <AppContext.Provider
@@ -44,11 +44,13 @@ function App() {
         showSocial,
         setShowTopBtn,
         setOnScrollY,
-        setShowSocial
-      }}>
+        setShowSocial,
+      }}
+    >
       <Routes>
         <Route exact path="/" element={<MainPage />} />
-        <Route path="/view"
+        <Route
+          path="/view"
           element={
             <ProtectedRoute user={user}>
               <ViewPage />

@@ -1,37 +1,37 @@
 {
-    "status": 200,
-    "result": [
-        {
-            "id": 1,
-            "icon": "bi-house",
-            "name": "home",
-            "show-text": "Home",
-            "active": "true",
-            "show": true
-        },
-        {
-            "id": 2,
-            "icon": "bi-person",
-            "name": "about",
-            "show-text": "About",
-            "active": "false",
-            "show": true
-        },
-        {
-            "id": 3,
-            "icon": "bi-newspaper",
-            "name": "blog",
-            "show-text": "Blog",
-            "active": "false",
-            "show": false
-        },
-        {
-            "id": 4,
-            "icon": "bi-send",
-            "name": "contact",
-            "show-text": "Contact",
-            "active": "false",
-            "show": true
-        }
-    ]
+  "status": 200,
+  "result": [
+    {
+      "id": 1,
+      "icon": "bi-house",
+      "name": "home",
+      "show-text": "Home",
+      "active": "true",
+      "show": true
+    },
+    {
+      "id": 2,
+      "icon": "bi-person",
+      "name": "about",
+      "show-text": "About",
+      "active": "false",
+      "show": true
+    },
+    {
+      "id": 3,
+      "icon": "bi-newspaper",
+      "name": "blog",
+      "show-text": "Blog",
+      "active": "false",
+      "show": false
+    },
+    {
+      "id": 4,
+      "icon": "bi-send",
+      "name": "contact",
+      "show-text": "Contact",
+      "active": "false",
+      "show": true
+    }
+  ]
 }

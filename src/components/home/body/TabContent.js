@@ -12,48 +12,40 @@ import ContactContent from "./content/Contact";
 import BodyContext from "../../../context/BodyContext";
 
 const styles = {
-    fadeIn: {
-        duration: 3,
-        animation: "x 3s",
-        animationName: Radium.keyframes(fadeIn, "fadeIn"),
-    }
+  fadeIn: {
+    duration: 1,
+    animation: "x 1s",
+    animationName: Radium.keyframes(fadeIn, "fadeIn"),
+  },
 };
 
 function TabContentComponent({ contents }) {
-    const { isAnimate, setIsAnimate } = React.useContext(BodyContext);
+  const { isAnimate, setIsAnimate } = React.useContext(BodyContext);
 
-    return (
-        <StyleRoot>
-            <div
-                id="myTabContent"
-                className="tab-content"
-                style={isAnimate ? styles.fadeIn : null}
-            >
-                {
-                    (contents && contents.length > 0)
-                        ? <>
-                            <HomeContent
-                                contents={contents[0]}
-                            />
-                            <AboutContent
-                                contents={contents[1]}
-                            />
-                            <BlogContent
-                                contents={contents[2]}
-                            />
-                            <ContactContent
-                                contents={contents[3]}
-                            />
-                        </>
-                        : <div className="text-center text-secondary py-5">
-                            <div className="spinner-grow" role="status">
-                                <span className="sr-only"></span>
-                            </div>
-                        </div>
-                }
+  return (
+    <StyleRoot>
+      <div
+        id="myTabContent"
+        className="tab-content"
+        style={isAnimate ? styles.fadeIn : null}
+      >
+        {contents && contents.length > 0 ? (
+          <>
+            <HomeContent contents={contents[0]} />
+            <AboutContent contents={contents[1]} />
+            <BlogContent contents={contents[2]} />
+            <ContactContent contents={contents[3]} />
+          </>
+        ) : (
+          <div className="text-center text-secondary py-5">
+            <div className="spinner-grow" role="status">
+              <span className="sr-only"></span>
             </div>
-        </StyleRoot >
-    );
+          </div>
+        )}
+      </div>
+    </StyleRoot>
+  );
 }
 
 export default TabContentComponent;

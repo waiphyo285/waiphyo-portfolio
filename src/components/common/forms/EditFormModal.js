@@ -2,6 +2,8 @@ import React from "react";
 import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom';
 
+import "./EditFormModal.css";
+
 const EditDataModalComponent = () => {
     const navigate = useNavigate();
 
@@ -66,18 +68,20 @@ const EditDataModalComponent = () => {
                                         {
                                             ["personal", "navlist", "content", "project", "banner", "contact", "social"].map((value, idx) => {
                                                 return (
-                                                    <div className="form-check form-check-inline my-2" key={idx}>
+                                                    <label htmlFor={value}>
                                                         <input
-                                                            className="form-check-input"
-                                                            name="serviceType"
                                                             type="radio"
+                                                            name="serviceType"
                                                             id={value}
                                                             value={value}
-                                                            onChange={handleChange} />
-                                                        <label className="form-check-label" htmlFor={value}>
+                                                            onChange={handleChange}
+                                                            className="card-input-element d-none"
+                                                        />
+                                                        <div className="card card-body bg-light d-flex flex-row justify-content-between align-items-center">
                                                             My {value.toUpperCase()}
-                                                        </label>
-                                                    </div>)
+                                                        </div>
+                                                    </label>
+                                                )
                                             })
                                         }
                                     </div>

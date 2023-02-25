@@ -40,7 +40,7 @@ function SwitchThemeComponent() {
     }, [dayCheck]);
 
     return (
-        <label className="nav-link">
+        <label>
             <Switch
                 onColor="#dfdfdf"
                 offColor="#6c757d"
@@ -50,6 +50,7 @@ function SwitchThemeComponent() {
                 checked={!dayCheck}
             />
         </label>
+   
     );
 }
 

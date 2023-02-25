@@ -1,23 +1,29 @@
 {
-    "status": 200,
-    "result": [
-        {
-            "id": 1,
-            "href": "https://github.com/waiphyo285",
-            "icon": "bi-github",
-            "color": "#286090"
-        },
-        {
-            "id": 2,
-            "href": "https://www.linkedin.com/in/wai-phyo-naing",
-            "icon": "bi-linkedin",
-            "color": "#286090"
-        },
-        {
-            "id": 3,
-            "href": "https://twitter.com/waiphyo285",
-            "icon": "bi-twitter",
-            "color": "#286090"
-        }
-    ]
+  "status": 200,
+  "result": [
+    {
+      "id": 1,
+      "href": "https://github.com/waiphyo285",
+      "icon": "bi-github",
+      "color": "#286090"
+    },
+    {
+      "id": 2,
+      "href": "https://www.linkedin.com/in/wai-phyo-naing",
+      "icon": "bi-linkedin",
+      "color": "#286090"
+    },
+    {
+      "id": 3,
+      "href": "https://twitter.com/waiphyo285",
+      "icon": "bi-twitter",
+      "color": "#286090"
+    },
+    {
+      "id": 4,
+      "href": "https://burma.social/@waiphyo285",
+      "icon": "bi-mastodon",
+      "color": "#286090"
+    }
+  ]
 }

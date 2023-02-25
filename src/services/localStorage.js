@@ -1,26 +1,25 @@
 class localStorageService {
-    ls = window.localStorage
+  ls = window.localStorage;
 
-    setItem(key, value) {
-        value = JSON.stringify(value)
-        this.ls.setItem(key, value)
-        return true
-    }
+  setItem(key, value) {
+    value = JSON.stringify(value);
+    this.ls.setItem(key, value);
+    return true;
+  }
 
-    getItem(key) {
-        const value = this.ls.getItem(key)
-        try {
-            return JSON.parse(value)
-        }
-        catch (e) {
-            return null
-        }
+  getItem(key) {
+    const value = this.ls.getItem(key);
+    try {
+      return JSON.parse(value);
+    } catch (e) {
+      return null;
     }
+  }
 
-    removeItem(key) {
-        this.ls.removeItem(key)
-        return true
-    }
+  removeItem(key) {
+    this.ls.removeItem(key);
+    return true;
+  }
 }
 
-export default new localStorageService()
+export default new localStorageService();

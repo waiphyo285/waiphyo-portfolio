@@ -12,7 +12,7 @@ const MessageButtonComponent = () => {
                 className="btn gradient-btn toggle-msg-btn"
                 style={showTopBtn ? { "bottom": "4.4rem" } : null}
             >
-                <i className={showSocial ? "bi-x" : "bi-chat-text"}></i>
+                <i className={`${showSocial ? "bi-x" : "bi-chat-text"}`}></i>
             </button>
         </>
     );
