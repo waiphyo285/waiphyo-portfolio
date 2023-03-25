@@ -6,12 +6,13 @@ function NavListComponent({ navlist }) {
     <ul
       id="myTab"
       role="tablist"
-      className="nav nav-pills nav-fill shadow-sm p-3 "
+      className="nav nav-pills nav-fill p-3"
       style={{
         position: "sticky",
-        backgroundColor: "#286090",
         top: 3,
         zIndex: 1000,
+        borderTop: `1.8px solid #6d757d`,
+        borderBottom: `1.8px solid #6d757d`,
       }}
     >
       {navlist &&

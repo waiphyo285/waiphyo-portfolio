@@ -19,3 +19,14 @@ To get started with React, along with [Serverless Functions](https://vercel.com/
 ```shell
 $ npx create-react-app my-app
 ```
+
+### Reference Links
+
+https://www.cssportal.com/css-clip-path-generator/
+https://blog.saeloun.com/2022/02/17/how-to-integrate-react-app-with-google-analytics.html
+https://stackoverflow.com/questions/55795125/how-to-send-email-from-my-react-web-application
+
+### Github commit
+
+git remote set-url origin https://waiphyo285@github.com/waiphyo285/time-with-arluma.git
+https://stackoverflow.com/questions/37813568/git-remote-repository-not-found

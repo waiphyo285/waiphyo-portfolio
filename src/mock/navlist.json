@@ -3,7 +3,7 @@
   "result": [
     {
       "id": 1,
-      "icon": "bi-house",
+      "icon": "bi-house-fill",
       "name": "home",
       "show-text": "Home",
       "active": "true",
@@ -11,7 +11,7 @@
     },
     {
       "id": 2,
-      "icon": "bi-person",
+      "icon": "bi-person-fill",
       "name": "about",
       "show-text": "About",
       "active": "false",
@@ -27,7 +27,7 @@
     },
     {
       "id": 4,
-      "icon": "bi-send",
+      "icon": "bi-send-fill",
       "name": "contact",
       "show-text": "Contact",
       "active": "false",

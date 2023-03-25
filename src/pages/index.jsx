@@ -35,8 +35,8 @@ function MainPage() {
         <ProgressBar scrollVal={onScrollY} />
       </div>
       <div className="relative">
-        {/* <AuthModal /> */}
-        {/* <EditFormModal /> */}
+        <AuthModal />
+        <EditFormModal />
         <ScrollTop scrollVal={onScrollY} />
         <ContactButton contacts={contactData.data} />
       </div>

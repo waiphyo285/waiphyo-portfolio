@@ -22,8 +22,7 @@
       "images": [
         "/images/hyper/backend-login.jpg",
         "/images/hyper/backend-dashboard.jpg",
-        "/images/hyper/backend-list.jpg",
-        "/images/hyper/backend-entry.jpg"
+        "/images/hyper/backend-list.jpg"
       ],
       "show": true
     },
@@ -48,8 +47,7 @@
       "images": [
         "/images/hyper/frontend-signup.jpg",
         "/images/hyper/frontend-login.jpg",
-        "/images/hyper/frontend-pages.jpg",
-        "/images/hyper/frontend-404.jpg"
+        "/images/hyper/frontend-pages.jpg"
       ],
       "show": true
     },

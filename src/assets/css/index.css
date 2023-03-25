@@ -1,17 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Padauk&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono&display=swap");
 
 :root {
   --white-color: #fdfdfd;
   --primary-color: #286090;
   --second-color: #ffc100;
   --third-color: #6d757d;
-  --dark-text: #f0f0f0;
-  --light-text: #0f0f0f;
-  --dark-background: #0f0f0f;
-  --light-background: #f0f0f0;
-  --primary-font: "Padauk", sans-serif;
+  --dark-text: #d3d3d3;
+  --light-text: #4d4d4d;
+  --dark-background: #2d2d2d;
+  --light-background: #d3d3d3;
+  --third-font: "Space Mono", monospace;
   --second-font: "Z01-Umoe002", sans-serif;
-  --third-font: "Myanmar Yinmar", sans-serif;
+  --primary-font: "Myanmar Yinmar", sans-serif;
 }
 
 .theme-light {
@@ -55,9 +56,18 @@ body {
   margin: 0;
   padding: 0;
   height: 100%;
-  font-family: var(--primary-font);
+  font-family: var(--third-font);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--third-font);
 }
 
 a {
@@ -66,10 +76,14 @@ a {
   text-decoration: none;
 }
 
+a:hover {
+  color: var(--primary-color);
+}
+
 p {
-  font-size: 18px !important;
+  font-size: 16px !important;
   text-align: justify;
-  line-height: 24px;
+  line-height: 32px;
   text-indent: 5ch;
 }
 
@@ -84,12 +98,11 @@ textarea {
 /* Header */
 
 .cover {
-  background: var(--dark-background);
-  background: linear-gradient(
+  /* background: linear-gradient(
     90deg,
     var(--primary-color),
     var(--primary-color)
-  );
+  ); */
 }
 
 .title-name {
@@ -153,7 +166,7 @@ textarea {
 .nav-link,
 .nav-link:hover {
   font-weight: bold;
-  color: var(--white-color) !important;
+  color: var(--third-color) !important;
 }
 
 .nav-link.active {
@@ -282,19 +295,17 @@ textarea {
   display: table;
   text-decoration: none;
   box-sizing: border-box;
-  min-height: 150px;
-  min-width: 100%;
   cursor: pointer;
 }
 
 .github-card > h3 {
   font-size: 18px;
-  /* color: var(--second-color); */
 }
 
 .github-card__desc {
   display: block;
   color: var(--third-color);
+  min-height: 78px;
   margin-bottom: 10px;
 }
 
@@ -313,5 +324,5 @@ textarea {
 
 .footer {
   position: static;
-  border-bottom: 5px solid var(--second-color);
+  border-bottom: 3px solid var(--third-color);
 }

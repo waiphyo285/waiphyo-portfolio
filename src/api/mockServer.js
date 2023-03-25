@@ -14,6 +14,13 @@ import ssService from "../services/sessionStorage";
 
 // Add an extra delay to all endpoints
 const ARTIFICIAL_DELAY_MS = 1000;
+const PIN_REPOSITORIES = [
+  "nodejs-starter-kit",
+  "waiphyo-portfolio",
+  "next-microfrontend",
+  "graphql-examples",
+  "burmese-measure",
+];
 
 const worker = setupWorker(
   rest.post("/mockApi/update_portfolio", (req, res, ctx) => {
@@ -48,20 +55,12 @@ const worker = setupWorker(
   }),
   rest.get("/mockApi/repository", async (req, res, ctx) => {
     async function fetchRepoJSON(username) {
-      const pin_repo = [
-        "node-js-template",
-        "waiphyo-portfolio",
-        "learning-nest-js",
-        "learning-next-js",
-        "graphql-examples",
-        "burmese-measure",
-      ];
       const response = await fetch(
         `https://api.github.com/users/${username}/repos?per_page=100`
       );
       const repositories = await response.json();
       const filter_repositories = repositories.filter(
-        (r) => !r.fork && pin_repo.includes(r.name)
+        (r) => !r.fork && PIN_REPOSITORIES.includes(r.name)
       );
       return filter_repositories;
     }

@@ -16,12 +16,10 @@ function AboutListComponent({ contents }) {
           )}
         </div>
         {content.portfolio === "#" ? (
-          <span className="text-secondary text-sm">
-            {content["sub-title"]}{" "}
-          </span>
+          <span className="text-secondary">{content["sub-title"]} </span>
         ) : (
           <a href="#" onClick={() => window.open(content.portfolio, "_blank")}>
-            {content["sub-title"] } 
+            {content["sub-title"]}
             <span className="bi bi-link-45deg"></span>
           </a>
         )}

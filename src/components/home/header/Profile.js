@@ -12,7 +12,7 @@ function ProfileComponent({ profile_img, fullname, greeting }) {
             width={150}
           />
         </figure>
-        <div className="text-light">
+        <div className="">
           <h1 className="title-name">{fullname}</h1>
           <span className="mx-2 greeting">{greeting}</span>
         </div>

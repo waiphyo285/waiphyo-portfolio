@@ -1,29 +1,17 @@
 import React from "react";
+import { Formik } from "formik";
+import { validationSchema } from "../../../validations/contact.schema";
 
 // utils function
 import showSnackBar from "../../../utils/show-snackbar";
 
 function ContactFormComponent() {
-  const [formData, setFormData] = React.useState({
-    name: "",
-    email: "",
-    message: "",
-  });
-
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const submitForm = (formData) => {
     const { name, email, message } = formData;
     Email.send({
-      SecureToken: "0BD9F554-7602-4D27-8D77-26145502C19D",
-      To: "waiphyoenaing.joy007@gmail.com",
-      From: "waiphyo.dev@gmail.com",
+      To: "",
+      From: "",
+      SecureToken: "",
       Subject: `${name} <${email}>`,
       Body: `${message}`,
     }).then((message) => {
@@ -43,57 +31,80 @@ function ContactFormComponent() {
 
   return (
     <div className="shadow-sm">
-      <form className="p-2" onSubmit={handleSubmit} method="post">
-        <div className="form-group m-2 mb-3">
-          <label htmlFor="name">Name *</label>
-          <input
-            type="text"
-            name="name"
-            id="nameInput"
-            value={formData.name}
-            onChange={handleChange}
-            className="form-control"
-            placeholder="John Doe"
-            autoComplete="off"
-            required
-          />
-        </div>
-        <div className="form-group m-2 mb-3">
-          <label htmlFor="email">Email *</label>
-          <input
-            type="email"
-            name="email"
-            id="emailInput"
-            value={formData.email}
-            onChange={handleChange}
-            className="form-control"
-            placeholder="john@doe.io"
-            autoComplete="off"
-            required
-          />
-        </div>
-        <div className="form-group m-2 mb-3">
-          <label htmlFor="message">Message *</label>
-          <textarea
-            value={formData.message}
-            onChange={handleChange}
-            placeholder={"Lorem ipsum is ..."}
-            className="form-control"
-            id="messageInput"
-            name="message"
-            rows="3"
-            required
-          ></textarea>
-        </div>
-        <div className="form-group m-2 my-4">
-          <hr />
-        </div>
-        <div className="form-group pb-2 text-center">
-          <button type="submit" className="btn submit-btn w-50">
-            <i className="bi-send" /> Submit
-          </button>
-        </div>
-      </form>
+      <Formik
+        validationSchema={validationSchema}
+        initialValues={{ name: "", email: "", message: "" }}
+        onSubmit={(values) => {
+          submitForm(values);
+        }}
+      >
+        {({
+          values,
+          errors,
+          touched,
+          handleChange,
+          handleBlur,
+          handleSubmit,
+        }) => (
+          <form className="p-2" onSubmit={handleSubmit}>
+            <div className="form-group m-2 mb-3">
+              <label htmlFor="name">Name *</label>
+              <input
+                type="text"
+                name="name"
+                id="nameInput"
+                value={values.name}
+                onChange={handleChange}
+                className="form-control"
+                placeholder="John Doe"
+                autoComplete="off"
+              />
+              <span className="text-danger">
+                {errors.name && touched.name && errors.name}
+              </span>
+            </div>
+            <div className="form-group m-2 mb-3">
+              <label htmlFor="email">Email *</label>
+              <input
+                type="email"
+                name="email"
+                id="emailInput"
+                value={values.email}
+                onChange={handleChange}
+                className="form-control"
+                placeholder="john@doe.io"
+                autoComplete="off"
+              />
+              <span className="text-danger">
+                {errors.email && touched.email && errors.email}
+              </span>
+            </div>
+            <div className="form-group m-2 mb-3">
+              <label htmlFor="message">Message *</label>
+              <textarea
+                value={values.message}
+                onChange={handleChange}
+                placeholder={"Lorem ipsum is ..."}
+                className="form-control"
+                id="messageInput"
+                name="message"
+                rows="3"
+              ></textarea>
+              <span className="text-danger">
+                {errors.message && touched.message && errors.message}
+              </span>
+            </div>
+            <div className="form-group m-2 my-4">
+              <hr />
+            </div>
+            <div className="form-group pb-2 text-center">
+              <button type="submit" className="btn submit-btn w-50">
+                <i className="bi-send" /> Submit
+              </button>
+            </div>
+          </form>
+        )}
+      </Formik>
     </div>
   );
 }
